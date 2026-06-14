@@ -24,7 +24,7 @@ export function LanguageSwitcher({ isOverDarkSection = false, variant }: Languag
         className="relative flex items-center p-[3px] rounded-[12px] transition-all duration-700"
         style={{
           background: isAuth
-            ? "#1a1a1c"
+            ? "#26215c"
             : isEffectiveDark 
               ? "rgba(255, 255, 255, 0.15)" 
               : "rgba(0, 0, 0, 0.12)",

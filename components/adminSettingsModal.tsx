@@ -142,7 +142,7 @@ export function AdminSettingsModal({ isOpen, onClose }: AdminSettingsModalProps)
                       className="relative px-8 py-2.5 rounded-full font-semibold transition-all flex-shrink-0 cursor-pointer mt-4"
                       animate={{
                         backgroundColor: isAdminView ? "#dc2626" : "rgba(0, 0, 0, 0.06)",
-                        color: isAdminView ? "#ffffff" : "#000000",
+                        color: isAdminView ? "#ffffff" : "#26215c",
                       }}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}

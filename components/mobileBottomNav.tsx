@@ -98,7 +98,7 @@ function MobileGlassDock({ activeIndex, isAnimating, tappedIndex, onNavClick }: 
   }, [])
 
   const textColor = "rgba(0, 0, 0, 0.8)"
-  const activeColor = "#000000"
+  const activeColor = "#26215c"
   const bgColor = "rgba(255, 255, 255, 0.85)"
   const pillBg = "rgba(0, 0, 0, 0.08)"
   const shadowColor =
@@ -312,8 +312,8 @@ function DesktopGlassDock({ activeIndex, isAnimating, tappedIndex, onNavClick, u
 
   const displayAnimating = isAnimating || isHoverAnimating
 
-  const textColor = "#1B1B1B"
-  const activeColor = "#000000"
+  const textColor = "#26215c"
+  const activeColor = "#26215c"
 
   const [navbarState, setNavbarState] = useState<NavbarState>("initial")
   const { isInitialLoading: globalInitialLoading } = useLoadingContext()
@@ -551,7 +551,7 @@ function DesktopGlassDock({ activeIndex, isAnimating, tappedIndex, onNavClick, u
               boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
             }}
           >
-            <svg className="w-3 h-3 text-[#1E1E1E] mb-[1px] opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
+            <svg className="w-3 h-3 text-[#26215c] mb-[1px] opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={4}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
             </svg>
           </motion.button>
@@ -585,7 +585,7 @@ function DesktopGlassDock({ activeIndex, isAnimating, tappedIndex, onNavClick, u
         transition={{ ...navItemVariants.visible.transition, delay: 0.4 }}
         onClick={(e) => onNavClick(e, "#top", 0)}
         className="relative font-black tracking-tight px-2 py-1 flex-shrink-0 cursor-pointer"
-        style={{ color: "#1E1E1E", fontSize: "1.25rem" }}
+        style={{ color: "#26215c", fontSize: "1.25rem" }}
         animate={{
           letterSpacing: isExpanded ? "-0.02em" : "-0.01em",
         }}
@@ -704,7 +704,7 @@ function DesktopGlassDock({ activeIndex, isAnimating, tappedIndex, onNavClick, u
                 }}
                 transition={springConfig}
                 style={{
-                  color: isActive ? activeColor : "#1E1E1E",
+                  color: isActive ? activeColor : "#26215c",
                   fontSize: "10px",
                 }}
               >
@@ -732,7 +732,7 @@ function DesktopGlassDock({ activeIndex, isAnimating, tappedIndex, onNavClick, u
         transition={{ ...navItemVariants.visible.transition, delay: 1.2 }}
         className={`flex items-center pl-0 flex-shrink-0`} 
         style={{ width: "auto", justifyContent: "flex-start", gap: "8px" }}>
-        <div style={{ color: "#1E1E1E" }}>
+        <div style={{ color: "#26215c" }}>
           <LanguageSwitcher variant="navbar" />
         </div>
         <div style={{ display: "flex", justifyContent: "flex-end", width: "auto", height: "48px" }}>
@@ -744,7 +744,7 @@ function DesktopGlassDock({ activeIndex, isAnimating, tappedIndex, onNavClick, u
                 onClick={() => setAuthModalOpen(true)}
                 className="font-bold rounded-full hover:opacity-90 whitespace-nowrap transition-opacity duration-300 cursor-pointer inline-flex items-center justify-center"
                 style={{
-                  backgroundColor: "#111111",
+                  backgroundColor: "#26215c",
                   color: "#ffffff",
                   boxShadow: "0 4px 14px rgba(0, 0, 0, 0.25), 0 2px 6px rgba(0, 0, 0, 0.15)",
                   transition: "background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease, opacity 0.3s ease",

@@ -113,7 +113,7 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
   if (loading && reviews.length === 0) {
     return (
       <div className="flex items-center justify-center py-12">
-        <Loader2 className="w-8 h-8 animate-spin text-[#111111]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[#26215c]" />
       </div>
     )
   }
@@ -123,13 +123,13 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
       {/* Header Section */}
       <div className="flex items-start justify-between">
         <div>
-          <h2 className="text-[20px] font-bold text-[#111111] mb-2">Guest reviews</h2>
+          <h2 className="text-[20px] font-bold text-[#26215c] mb-2">Guest reviews</h2>
           <div className="flex items-center gap-1.5 text-[14px]">
-            <Star className="w-4 h-4 text-[#111111] fill-current" />
-            <span className="font-bold text-[#111111]">
+            <Star className="w-4 h-4 text-[#26215c] fill-current" />
+            <span className="font-bold text-[#26215c]">
               {stats.avgRating > 0 ? stats.avgRating.toFixed(1) : "0.0"}
             </span>
-            <span className="text-[#6B7A90] font-medium">
+            <span className="text-[#534ab7] font-medium">
               ({stats.reviewCount > 0 ? stats.reviewCount : 0} reviews)
             </span>
           </div>
@@ -138,13 +138,13 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
           {eligibleBooking && !showForm && (
             <button
               onClick={() => setShowForm(true)}
-              className="text-[13px] font-bold text-white bg-[#111111] hover:bg-black px-4 py-2 rounded-lg transition-colors"
+              className="text-[13px] font-bold text-white bg-[#26215c] hover:bg-black px-4 py-2 rounded-lg transition-colors"
             >
               Write Review
             </button>
           )}
           {reviews.length > 3 && (
-             <button className="text-[13px] font-bold text-[#6B7A90] hover:text-[#111111] flex items-center gap-1 transition-colors cursor-pointer group">
+             <button className="text-[13px] font-bold text-[#534ab7] hover:text-[#26215c] flex items-center gap-1 transition-colors cursor-pointer group">
                View all reviews <span className="group-hover:translate-x-0.5 transition-transform">→</span>
              </button>
           )}
@@ -160,29 +160,29 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
             exit={{ opacity: 0, height: 0 }}
             className="overflow-hidden"
           >
-            <div className="p-6 rounded-[20px] bg-[#F8FAFC] border border-[#E7ECF3] relative mb-4">
+            <div className="p-6 rounded-[20px] bg-[#f7f6fd] border border-[#cecbf6] relative mb-4">
               {success ? (
                 <div className="flex flex-col items-center justify-center py-6 text-center">
                   <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mb-3">
                     <Check className="w-6 h-6 text-green-500" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#111111]">Published!</h3>
+                  <h3 className="text-lg font-bold text-[#26215c]">Published!</h3>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-[16px] font-bold text-[#111111]">Your Experience</h3>
+                    <h3 className="text-[16px] font-bold text-[#26215c]">Your Experience</h3>
                     <button 
                       type="button" 
                       onClick={() => setShowForm(false)}
                       className="p-1.5 hover:bg-black/5 rounded-full transition-colors"
                     >
-                      <X className="w-4 h-4 text-[#6B7A90]" />
+                      <X className="w-4 h-4 text-[#534ab7]" />
                     </button>
                   </div>
 
                   <div className="space-y-3">
-                    <p className="text-[11px] font-bold text-[#6B7A90] uppercase tracking-wider">Rating</p>
+                    <p className="text-[11px] font-bold text-[#534ab7] uppercase tracking-wider">Rating</p>
                     <div className="flex gap-2">
                       {[1, 2, 3, 4, 5].map((s) => (
                         <button
@@ -191,8 +191,8 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
                           onClick={() => setRating(s)}
                           className={`p-3 rounded-[12px] border transition-all ${
                             rating >= s 
-                              ? "bg-[#111111] border-[#111111] text-white" 
-                              : "bg-white border-[#E7ECF3] text-[#6B7A90] hover:border-[#111111]/30"
+                              ? "bg-[#26215c] border-[#26215c] text-white" 
+                              : "bg-white border-[#cecbf6] text-[#534ab7] hover:border-[#26215c]/30"
                           }`}
                         >
                           <Star className={`w-5 h-5 ${rating >= s ? "fill-white" : ""}`} />
@@ -202,13 +202,13 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
                   </div>
 
                   <div className="space-y-3">
-                    <p className="text-[11px] font-bold text-[#6B7A90] uppercase tracking-wider">Comment</p>
+                    <p className="text-[11px] font-bold text-[#534ab7] uppercase tracking-wider">Comment</p>
                     <textarea
                       required
                       value={comment}
                       onChange={(e) => setComment(e.target.value)}
                       placeholder="What did you love about this space?"
-                      className="w-full p-4 rounded-[16px] bg-white border border-[#E7ECF3] focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors outline-none text-[14px] min-h-[120px] resize-none"
+                      className="w-full p-4 rounded-[16px] bg-white border border-[#cecbf6] focus:border-[#26215c] focus:ring-1 focus:ring-[#26215c] transition-colors outline-none text-[14px] min-h-[120px] resize-none"
                     />
                   </div>
 
@@ -222,7 +222,7 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3.5 rounded-[12px] bg-[#111111] text-white font-bold text-[14px] hover:bg-black transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                    className="w-full py-3.5 rounded-[12px] bg-[#26215c] text-white font-bold text-[14px] hover:bg-black transition-all disabled:opacity-50 flex items-center justify-center gap-2"
                   >
                     {isSubmitting ? <Loader2 className="w-4 h-4 animate-spin" /> : "Post Review"}
                   </button>
@@ -237,10 +237,10 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
       {reviews.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {reviews.slice(0, visibleCount).map((rev) => (
-            <div key={rev.id} className="p-6 rounded-[20px] bg-[#F8FAFC] border border-[#E7ECF3] flex flex-col justify-between min-h-[160px] h-full transition-shadow hover:shadow-[0_4px_12px_rgba(107,122,144,0.05)]">
+            <div key={rev.id} className="p-6 rounded-[20px] bg-[#f7f6fd] border border-[#cecbf6] flex flex-col justify-between min-h-[160px] h-full transition-shadow hover:shadow-[0_4px_12px_rgba(107,122,144,0.05)]">
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-[#E7ECF3] flex items-center justify-center text-[#111111] font-bold text-[14px] overflow-hidden shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-[#cecbf6] flex items-center justify-center text-[#26215c] font-bold text-[14px] overflow-hidden shrink-0">
                     {rev.reviewerImage ? (
                       <img src={rev.reviewerImage} alt={rev.reviewerName} className="w-full h-full object-cover" />
                     ) : (
@@ -248,8 +248,8 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
                     )}
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#111111] text-[14px] leading-none mb-1 line-clamp-1">{rev.reviewerName}</h4>
-                    <p className="text-[12px] text-[#6B7A90]">
+                    <h4 className="font-bold text-[#26215c] text-[14px] leading-none mb-1 line-clamp-1">{rev.reviewerName}</h4>
+                    <p className="text-[12px] text-[#534ab7]">
                       {rev.createdAt?.toDate 
                         ? format(rev.createdAt.toDate(), "MMMM yyyy") 
                         : "2 weeks ago"}
@@ -257,7 +257,7 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
                   </div>
                 </div>
                 
-                <p className="text-[#111111] text-[13px] leading-relaxed mb-4 line-clamp-4">
+                <p className="text-[#26215c] text-[13px] leading-relaxed mb-4 line-clamp-4">
                   {rev.comment}
                 </p>
               </div>
@@ -266,7 +266,7 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
                 {[1, 2, 3, 4, 5].map((s) => (
                   <Star 
                     key={s} 
-                    className={`w-3.5 h-3.5 ${s <= rev.rating ? "fill-[#111111] text-[#111111]" : "text-[#E7ECF3]"}`} 
+                    className={`w-3.5 h-3.5 ${s <= rev.rating ? "fill-[#26215c] text-[#26215c]" : "text-[#cecbf6]"}`} 
                   />
                 ))}
               </div>
@@ -275,7 +275,7 @@ export function VenueReviews({ venueId, venueName, hostId }: VenueReviewsProps) 
         </div>
       ) : (
         <div className="py-12 text-center">
-          <p className="text-[13px] text-[#6B7A90] font-medium">No reviews yet. Be the first to review!</p>
+          <p className="text-[13px] text-[#534ab7] font-medium">No reviews yet. Be the first to review!</p>
         </div>
       )}
     </div>

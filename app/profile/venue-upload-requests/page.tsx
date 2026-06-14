@@ -108,7 +108,7 @@ export default function VenueUploadRequestsPage() {
   const pendingCount = venues.filter((v) => v.status === "pending").length
 
   return (
-    <main className="min-h-screen bg-[#F5F7FB] relative font-sans">
+    <main className="min-h-screen bg-[#f7f6fd] relative font-sans">
       <Header />
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-96 md:w-[500px] h-96 md:h-[500px] bg-gradient-to-br from-apple-blue/10 to-transparent rounded-full blur-3xl opacity-50" />
@@ -148,7 +148,7 @@ export default function VenueUploadRequestsPage() {
             </p>
             <Link
               href="/list-your-space"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#0a0f1e] text-white font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-black/10 uppercase text-xs tracking-widest"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#26215c] text-white font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-black/10 uppercase text-xs tracking-widest"
             >
               <Plus className="w-5 h-5" />
               List Your Space

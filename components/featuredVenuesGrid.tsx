@@ -108,7 +108,7 @@ export function FeaturedVenuesGrid() {
 
 
     <div className="flex items-end justify-between mb-8">
-      <h2 className="text-[#1a1a1c] text-[26px] md:text-[32px] font-bold tracking-tight">
+      <h2 className="text-[#26215c] text-[26px] md:text-[32px] font-bold tracking-tight">
         {isGeorgian ? "რჩეული სივრცეები" : "Featured venues"}
       </h2>
     </div>

@@ -12,7 +12,7 @@ export function AdminViewToggle() {
       className="relative px-3 py-2 rounded-full font-semibold text-sm transition-all duration-300"
       style={{
         backgroundColor: isAdminView ? "#dc2626" : "rgba(0, 0, 0, 0.06)",
-        color: isAdminView ? "#ffffff" : "#000000",
+        color: isAdminView ? "#ffffff" : "#26215c",
         boxShadow: isAdminView ? "0 4px 12px rgba(220, 38, 38, 0.3)" : "0 2px 8px rgba(0, 0, 0, 0.08)",
       }}
       whileHover={{ scale: 1.05 }}

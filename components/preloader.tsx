@@ -44,7 +44,7 @@ export function Preloader() {
                   animate={{ letterSpacing: "-0.05em", opacity: 1 }}
                   transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  EVENT <span className="text-[#4a5f7f]">VENUES</span>
+                  EVENT <span className="text-[#7f77dd]">VENUES</span>
                 </motion.div>
                 
                 {/* Subtle light sweep effect */}
@@ -60,7 +60,7 @@ export function Preloader() {
             {/* Premium Loader Bar */}
             <div className="w-48 h-[2px] bg-border/50 rounded-full overflow-hidden relative">
               <motion.div
-                className="absolute inset-y-0 left-0 bg-[#4a5f7f] shadow-[0_0_10px_rgba(74,95,127,0.3)]"
+                className="absolute inset-y-0 left-0 bg-[#7f77dd] shadow-[0_0_10px_rgba(74,95,127,0.3)]"
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 2.2, ease: [0.65, 0, 0.35, 1] }}
@@ -83,7 +83,7 @@ export function Preloader() {
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.15 }}
-              className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#4a5f7f] rounded-full blur-[120px]"
+              className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#7f77dd] rounded-full blur-[120px]"
             />
             <motion.div 
               initial={{ opacity: 0 }}

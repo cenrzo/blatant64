@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#EEF3F8] relative homepage-wrapper overflow-x-hidden">
+    <main className="min-h-screen bg-[#f7f6fd] relative homepage-wrapper overflow-x-hidden">
       <Header />
       <HeroSection />
       <ExploreByCategory />

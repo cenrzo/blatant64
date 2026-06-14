@@ -75,12 +75,12 @@ export function InputField({ label, required, ...props }: { label: string; requi
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-1.5">
-        <label className="text-[13px] font-medium text-[#111111]">{label}</label>
+        <label className="text-[13px] font-medium text-[#26215c]">{label}</label>
         {required && <span className="text-red-500 text-[12px]">*</span>}
       </div>
       <input
         {...props}
-        className="w-full px-4 py-3.5 rounded-lg bg-[#FFFFFF] border border-[#E7ECF3] transition-all duration-200 text-[15px] text-[#111111] placeholder:text-[#6B7A90] outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111]"
+        className="w-full px-4 py-3.5 rounded-lg bg-[#FFFFFF] border border-[#cecbf6] transition-all duration-200 text-[15px] text-[#26215c] placeholder:text-[#534ab7] outline-none focus:border-[#26215c] focus:ring-1 focus:ring-[#26215c]"
       />
     </div>
   )
@@ -91,12 +91,12 @@ export function TextareaField({ label, required, ...props }: { label: string; re
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-1.5">
-        <label className="text-[13px] font-medium text-[#111111]">{label}</label>
+        <label className="text-[13px] font-medium text-[#26215c]">{label}</label>
         {required && <span className="text-red-500 text-[12px]">*</span>}
       </div>
       <textarea
         {...props}
-        className="w-full px-4 py-3.5 rounded-lg bg-[#FFFFFF] border border-[#E7ECF3] transition-all duration-200 text-[15px] text-[#111111] placeholder:text-[#6B7A90] outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] resize-none"
+        className="w-full px-4 py-3.5 rounded-lg bg-[#FFFFFF] border border-[#cecbf6] transition-all duration-200 text-[15px] text-[#26215c] placeholder:text-[#534ab7] outline-none focus:border-[#26215c] focus:ring-1 focus:ring-[#26215c] resize-none"
       />
     </div>
   )
@@ -119,8 +119,8 @@ export function PillSelect({ items, selected, onSelect, multi = false }: {
           onClick={() => onSelect(item.id)}
           className={`px-5 py-2.5 rounded-md text-[14px] font-medium transition-all duration-200 border cursor-pointer
             ${isSelected(item.id)
-              ? "bg-[#111111] text-[#FFFFFF] border-[#111111]"
-              : "bg-[#FFFFFF] text-[#111111] border-[#E7ECF3] hover:border-[#111111] hover:bg-[#F5F7FB]"
+              ? "bg-[#26215c] text-[#FFFFFF] border-[#26215c]"
+              : "bg-[#FFFFFF] text-[#26215c] border-[#cecbf6] hover:border-[#26215c] hover:bg-[#f7f6fd]"
             }`}
         >
           {item.label}
@@ -141,22 +141,22 @@ export function PhotoUpload({ images, onAdd, onRemove }: {
     <div className="space-y-4">
       <div
         onClick={() => ref.current?.click()}
-        className="w-full aspect-[21/9] rounded-lg border border-dashed border-[#E7ECF3] flex flex-col items-center justify-center cursor-pointer hover:bg-[#F5F7FB] hover:border-[#111111]/30 transition-all duration-200 bg-[#FFFFFF]"
+        className="w-full aspect-[21/9] rounded-lg border border-dashed border-[#cecbf6] flex flex-col items-center justify-center cursor-pointer hover:bg-[#f7f6fd] hover:border-[#26215c]/30 transition-all duration-200 bg-[#FFFFFF]"
       >
-        <div className="w-12 h-12 rounded-sm bg-[#F5F7FB] flex items-center justify-center mb-3">
-          <UploadCloud className="w-5 h-5 text-[#111111]" />
+        <div className="w-12 h-12 rounded-sm bg-[#f7f6fd] flex items-center justify-center mb-3">
+          <UploadCloud className="w-5 h-5 text-[#26215c]" />
         </div>
-        <span className="text-[15px] font-medium text-[#111111]">Drag & drop or click to upload</span>
-        <span className="text-[13px] text-[#6B7A90] mt-1">High-quality JPG, PNG up to 10MB</span>
+        <span className="text-[15px] font-medium text-[#26215c]">Drag & drop or click to upload</span>
+        <span className="text-[13px] text-[#534ab7] mt-1">High-quality JPG, PNG up to 10MB</span>
         <input ref={ref} type="file" multiple accept="image/*" onChange={onAdd} className="hidden" />
       </div>
 
       {images.length > 0 && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {images.map((img, i) => (
-            <div key={i} className="relative aspect-video rounded-lg overflow-hidden group border border-[#E7ECF3]">
+            <div key={i} className="relative aspect-video rounded-lg overflow-hidden group border border-[#cecbf6]">
               <img src={img} className="w-full h-full object-cover" alt="" />
-              <button onClick={() => onRemove(i)} className="absolute top-2 right-2 p-1.5 bg-[#111111]/80 backdrop-blur-sm text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
+              <button onClick={() => onRemove(i)} className="absolute top-2 right-2 p-1.5 bg-[#26215c]/80 backdrop-blur-sm text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer">
                 <X className="w-3.5 h-3.5" />
               </button>
             </div>
@@ -191,16 +191,16 @@ export function AvailabilityCalendar({ selectedDates, onChange }: { selectedDate
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between px-2">
-          <h4 className="text-[16px] font-semibold text-[#111111]">{format(monthDate, "MMMM yyyy")}</h4>
+          <h4 className="text-[16px] font-semibold text-[#26215c]">{format(monthDate, "MMMM yyyy")}</h4>
           <div className="flex gap-2">
-            <button type="button" onClick={() => setCurrentIdx(Math.max(0, currentIdx - 1))} disabled={currentIdx === 0} className="w-9 h-9 rounded-md flex items-center justify-center bg-[#F5F7FB] hover:bg-[#E7ECF3] disabled:opacity-30 transition-all cursor-pointer border border-transparent hover:border-[#E7ECF3]"><ChevronLeft className="w-4 h-4 text-[#111111]" /></button>
-            <button type="button" onClick={() => setCurrentIdx(Math.min(months.length - 1, currentIdx + 1))} disabled={currentIdx === months.length - 1} className="w-9 h-9 rounded-md flex items-center justify-center bg-[#F5F7FB] hover:bg-[#E7ECF3] disabled:opacity-30 transition-all cursor-pointer border border-transparent hover:border-[#E7ECF3]"><ChevronRight className="w-4 h-4 text-[#111111]" /></button>
+            <button type="button" onClick={() => setCurrentIdx(Math.max(0, currentIdx - 1))} disabled={currentIdx === 0} className="w-9 h-9 rounded-md flex items-center justify-center bg-[#f7f6fd] hover:bg-[#cecbf6] disabled:opacity-30 transition-all cursor-pointer border border-transparent hover:border-[#cecbf6]"><ChevronLeft className="w-4 h-4 text-[#26215c]" /></button>
+            <button type="button" onClick={() => setCurrentIdx(Math.min(months.length - 1, currentIdx + 1))} disabled={currentIdx === months.length - 1} className="w-9 h-9 rounded-md flex items-center justify-center bg-[#f7f6fd] hover:bg-[#cecbf6] disabled:opacity-30 transition-all cursor-pointer border border-transparent hover:border-[#cecbf6]"><ChevronRight className="w-4 h-4 text-[#26215c]" /></button>
           </div>
         </div>
 
         <div className="grid grid-cols-7 gap-2">
           {['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'].map((d, i) => (
-            <div key={i} className="text-center text-[12px] font-medium text-[#6B7A90] py-2">{d}</div>
+            <div key={i} className="text-center text-[12px] font-medium text-[#534ab7] py-2">{d}</div>
           ))}
 
           {weeks.map((week, w) => (
@@ -217,9 +217,9 @@ export function AvailabilityCalendar({ selectedDates, onChange }: { selectedDate
                     type="button"
                     disabled={isPast}
                     onClick={() => toggleDate(date)}
-                    className={`aspect-square rounded-md flex items-center justify-center text-[14px] font-medium transition-all cursor-pointer ${isPast ? "opacity-20 cursor-not-allowed text-[#111111]"
-                      : isSelected ? "bg-[#111111] text-[#FFFFFF]"
-                        : "bg-[#F5F7FB] hover:bg-[#E7ECF3] text-[#111111]"
+                    className={`aspect-square rounded-md flex items-center justify-center text-[14px] font-medium transition-all cursor-pointer ${isPast ? "opacity-20 cursor-not-allowed text-[#26215c]"
+                      : isSelected ? "bg-[#26215c] text-[#FFFFFF]"
+                        : "bg-[#f7f6fd] hover:bg-[#cecbf6] text-[#26215c]"
                       }`}
                   >
                     {date.getDate()}
@@ -233,7 +233,7 @@ export function AvailabilityCalendar({ selectedDates, onChange }: { selectedDate
     )
   }
 
-  return <div className="p-6 rounded-lg bg-[#FFFFFF] border border-[#E7ECF3]">{renderMonth(months[currentIdx])}</div>
+  return <div className="p-6 rounded-lg bg-[#FFFFFF] border border-[#cecbf6]">{renderMonth(months[currentIdx])}</div>
 }
 
 export { AMENITIES, CATEGORIES, CITIES }

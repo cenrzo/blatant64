@@ -100,18 +100,18 @@ const DayCell = memo(({
         transition-[transform,color] duration-200 ease-out
         ${disabled 
           ? 'text-gray-400 line-through cursor-not-allowed italic opacity-30' 
-          : 'text-[#1a1a1c] hover:bg-black/5 hover:scale-110 active:scale-95'
+          : 'text-[#26215c] hover:bg-black/5 hover:scale-110 active:scale-95'
         }
         ${selected ? 'text-white scale-105 z-10' : ''}
         ${isToday && !selected ? 'border-2 border-black/20' : ''}
       `}
       style={{ 
         transform: 'translateZ(0)',
-        backgroundColor: selected ? '#111111' : 'transparent'
+        backgroundColor: selected ? '#26215c' : 'transparent'
       }}
     >
       <div 
-        className={`absolute inset-0 rounded-xl bg-[#111111] shadow-lg shadow-black/20 -z-10 transition-opacity duration-200 pointer-events-none ${selected ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 rounded-xl bg-[#26215c] shadow-lg shadow-black/20 -z-10 transition-opacity duration-200 pointer-events-none ${selected ? 'opacity-100' : 'opacity-0'}`}
         style={{ transform: 'translateZ(0)' }}
       />
       {dayNum}
@@ -137,7 +137,7 @@ const CalendarGrid = memo(({
   return (
     <div className="grid grid-cols-7 gap-1 sm:gap-2">
       {['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'].map(day => (
-        <div key={day} className="text-center text-[10px] font-black text-[#1a1a1c]/60 uppercase py-2">
+        <div key={day} className="text-center text-[10px] font-black text-[#26215c]/60 uppercase py-2">
           {day}
         </div>
       ))}
@@ -178,20 +178,20 @@ const CalendarHeader = memo(({
       type="button"
       onClick={() => onToggleMonth(-1)}
       disabled={isSameMonth(calendarMonth, currentMonth)}
-      className="p-3 rounded-xl border border-[#E7ECF3] hover:bg-[#F8FAFC] transition-colors disabled:opacity-0 disabled:pointer-events-none cursor-pointer"
+      className="p-3 rounded-xl border border-[#cecbf6] hover:bg-[#f7f6fd] transition-colors disabled:opacity-0 disabled:pointer-events-none cursor-pointer"
     >
-      <MemoizedChevronLeft className="w-5 h-5 text-[#111111]" />
+      <MemoizedChevronLeft className="w-5 h-5 text-[#26215c]" />
     </button>
-    <h4 className="text-lg font-bold text-[#111111]">
+    <h4 className="text-lg font-bold text-[#26215c]">
       {getMonthName(calendarMonth)} {calendarMonth.getFullYear()}
     </h4>
     <button 
       type="button"
       onClick={() => onToggleMonth(1)}
       disabled={isSameMonth(calendarMonth, addMonths(currentMonth, 1))}
-      className="p-3 rounded-xl border border-[#E7ECF3] hover:bg-[#F8FAFC] transition-colors disabled:opacity-0 disabled:pointer-events-none cursor-pointer"
+      className="p-3 rounded-xl border border-[#cecbf6] hover:bg-[#f7f6fd] transition-colors disabled:opacity-0 disabled:pointer-events-none cursor-pointer"
     >
-      <MemoizedChevronRight className="w-5 h-5 text-[#111111]" />
+      <MemoizedChevronRight className="w-5 h-5 text-[#26215c]" />
     </button>
   </div>
 ));
@@ -395,11 +395,11 @@ const BookingModalContent = memo(({
   const totalPrice = selectedDates.length * venuePrice;
 
   return (
-    <div className="w-full bg-white rounded-[32px] shadow-[0_20px_60px_rgba(107,122,144,0.15)] overflow-hidden border border-[#E7ECF3] flex flex-col">
+    <div className="w-full bg-white rounded-[32px] shadow-[0_20px_60px_rgba(107,122,144,0.15)] overflow-hidden border border-[#cecbf6] flex flex-col">
       <div className="absolute top-6 right-6 z-20">
         <button 
           onClick={onClose}
-          className="p-2.5 rounded-full bg-[#F8FAFC] hover:bg-[#EEF2F7] text-[#111111] transition-colors duration-200 cursor-pointer"
+          className="p-2.5 rounded-full bg-[#f7f6fd] hover:bg-[#f7f6fd] text-[#26215c] transition-colors duration-200 cursor-pointer"
         >
           <MemoizedX className="w-5 h-5" />
         </button>
@@ -411,14 +411,14 @@ const BookingModalContent = memo(({
             <div className="w-24 h-24 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-8">
               <CheckCircle2 className="w-12 h-12 text-green-500" />
             </div>
-            <h3 className="text-3xl font-bold text-[#111111]">{t.venues.bookingModal.success}</h3>
-            <p className="text-[15px] text-[#6B7A90] max-w-md mx-auto leading-relaxed">
+            <h3 className="text-3xl font-bold text-[#26215c]">{t.venues.bookingModal.success}</h3>
+            <p className="text-[15px] text-[#534ab7] max-w-md mx-auto leading-relaxed">
               Wait for the host to accept the request. After they accept, you will have a 1-hour window to complete the payment.
             </p>
             <div className="pt-8">
               <Link 
                 href="/profile/requests" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#111111] text-white font-bold hover:bg-black transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#26215c] text-white font-bold hover:bg-black transition-colors"
               >
                 Go to Requests
               </Link>
@@ -428,12 +428,12 @@ const BookingModalContent = memo(({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="p-3.5 rounded-2xl bg-[#F5F7FB] border border-[#E7ECF3]">
-                  <MemoizedCalendarIcon className="w-8 h-8 text-[#111111]" />
+                <div className="p-3.5 rounded-2xl bg-[#f7f6fd] border border-[#cecbf6]">
+                  <MemoizedCalendarIcon className="w-8 h-8 text-[#26215c]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[#111111] tracking-tight">{t.venues.bookingModal.title}</h3>
-                  <p className="text-sm text-[#6B7A90]">{t.venues.bookingModal.subtitle}</p>
+                  <h3 className="text-2xl font-bold text-[#26215c] tracking-tight">{t.venues.bookingModal.title}</h3>
+                  <p className="text-sm text-[#534ab7]">{t.venues.bookingModal.subtitle}</p>
                 </div>
               </div>
 
@@ -445,7 +445,7 @@ const BookingModalContent = memo(({
                   getMonthName={getMonthName}
                 />
 
-                <div className="p-5 rounded-[24px] bg-[#F8FAFC] border border-[#E7ECF3] relative overflow-hidden">
+                <div className="p-5 rounded-[24px] bg-[#f7f6fd] border border-[#cecbf6] relative overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.div 
                       key={calendarMonth.toString()}
@@ -468,40 +468,40 @@ const BookingModalContent = memo(({
 
             <div className="flex flex-col space-y-6">
               <form onSubmit={handleBookingRequest} className="space-y-6 flex-1">
-                <div className="p-6 rounded-[24px] bg-[#F8FAFC] border border-[#E7ECF3]">
-                  <p className="text-[11px] font-bold text-[#6B7A90] uppercase tracking-wider mb-4">Selected Days</p>
+                <div className="p-6 rounded-[24px] bg-[#f7f6fd] border border-[#cecbf6]">
+                  <p className="text-[11px] font-bold text-[#534ab7] uppercase tracking-wider mb-4">Selected Days</p>
                   <div className="flex flex-wrap gap-2 max-h-[120px] overflow-y-auto pr-2 custom-scrollbar">
                     {selectedDates.length > 0 ? (
                       [...selectedDates].sort().map(d => (
-                        <span key={d} className="px-3 py-1.5 rounded-lg bg-white border border-[#E7ECF3] text-[#111111] text-sm font-semibold shadow-sm">
+                        <span key={d} className="px-3 py-1.5 rounded-lg bg-white border border-[#cecbf6] text-[#26215c] text-sm font-semibold shadow-sm">
                           {format(new Date(d), "MMM dd")}
                         </span>
                       ))
                     ) : (
-                      <p className="text-[#6B7A90] font-medium text-sm">No dates selected yet</p>
+                      <p className="text-[#534ab7] font-medium text-sm">No dates selected yet</p>
                     )}
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-bold text-[#111111]">Contact Phone Number *</label>
+                  <label className="text-sm font-bold text-[#26215c]">Contact Phone Number *</label>
                   <div className="relative">
-                    <MemoizedPhone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#6B7A90]" />
+                    <MemoizedPhone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#534ab7]" />
                     <input 
                       type="tel"
                       required
                       value={buyerPhone}
                       onChange={(e) => setBuyerPhone(e.target.value)}
                       placeholder="+1 (555) 000-0000"
-                      className="w-full pl-11 pr-4 py-3.5 rounded-[14px] border border-[#E7ECF3] bg-white focus:outline-none focus:border-[#111111] focus:ring-1 focus:ring-[#111111] transition-colors text-[14px]"
+                      className="w-full pl-11 pr-4 py-3.5 rounded-[14px] border border-[#cecbf6] bg-white focus:outline-none focus:border-[#26215c] focus:ring-1 focus:ring-[#26215c] transition-colors text-[14px]"
                     />
                   </div>
                 </div>
 
-                <div className="p-6 rounded-[24px] bg-[#F5F7FB] border border-[#E7ECF3] space-y-3">
+                <div className="p-6 rounded-[24px] bg-[#f7f6fd] border border-[#cecbf6] space-y-3">
                   <div className="flex justify-between items-center">
-                    <p className="text-lg font-bold text-[#111111]">{t.venues.bookingModal.total}</p>
-                    <p className="text-3xl font-bold text-[#111111]">${totalPrice}</p>
+                    <p className="text-lg font-bold text-[#26215c]">{t.venues.bookingModal.total}</p>
+                    <p className="text-3xl font-bold text-[#26215c]">${totalPrice}</p>
                   </div>
                 </div>
 
@@ -515,7 +515,7 @@ const BookingModalContent = memo(({
                 <button 
                   type="submit"
                   disabled={isBooking || selectedDates.length === 0}
-                  className="w-full py-4 rounded-[14px] bg-[#111111] text-white font-bold text-[15px] active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-3 shadow-[0_4px_14px_rgba(17,17,17,0.15)] cursor-pointer"
+                  className="w-full py-4 rounded-[14px] bg-[#26215c] text-white font-bold text-[15px] active:scale-[0.98] transition-all disabled:opacity-50 flex items-center justify-center gap-3 shadow-[0_4px_14px_rgba(17,17,17,0.15)] cursor-pointer"
                 >
                   {isBooking ? (
                     <>
@@ -624,7 +624,7 @@ export function VenueDetailsClient({ venue, isFirestoreVenue }: Props) {
   }
 
   return (
-    <main className="min-h-screen bg-[#F5F7FB] text-[#111111] pb-24 font-sans relative">
+    <main className="min-h-screen bg-[#f7f6fd] text-[#26215c] pb-24 font-sans relative">
       <BookingModalPortal isOpen={showBookingModal} onClose={handleCloseBookingModal}>
         <BookingModalContent
           venue={venue}
@@ -642,26 +642,26 @@ export function VenueDetailsClient({ venue, isFirestoreVenue }: Props) {
 
       {/* Top Section */}
       <div className="max-w-[1320px] mx-auto px-6 md:px-12 pt-[104px] pb-6">
-        <button onClick={() => router.back()} className="inline-flex items-center gap-2 text-[#6B7A90] font-medium text-[14px] hover:text-[#111111] transition-colors mb-6 cursor-pointer group">
+        <button onClick={() => router.back()} className="inline-flex items-center gap-2 text-[#534ab7] font-medium text-[14px] hover:text-[#26215c] transition-colors mb-6 cursor-pointer group">
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to search
         </button>
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div>
-            <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight text-[#111111] mb-2">{venueName}</h1>
-            <div className="flex flex-wrap items-center gap-4 text-[#6B7A90] text-[14px] font-medium">
+            <h1 className="text-[32px] md:text-[40px] font-bold tracking-tight text-[#26215c] mb-2">{venueName}</h1>
+            <div className="flex flex-wrap items-center gap-4 text-[#534ab7] text-[14px] font-medium">
               <div className="flex items-center gap-1.5"><MapPin className="w-4 h-4" /> {venueLocation}</div>
-              <div className="w-1 h-1 rounded-full bg-[#E7ECF3]" />
-              <div className="flex items-center gap-1.5"><Star className="w-4 h-4 text-[#111111] fill-current" /> 4.9 (28 reviews)</div>
-              <div className="w-1 h-1 rounded-full bg-[#E7ECF3]" />
+              <div className="w-1 h-1 rounded-full bg-[#cecbf6]" />
+              <div className="flex items-center gap-1.5"><Star className="w-4 h-4 text-[#26215c] fill-current" /> 4.9 (28 reviews)</div>
+              <div className="w-1 h-1 rounded-full bg-[#cecbf6]" />
               <div className="flex items-center gap-1.5"><Users className="w-4 h-4" /> Up to {venueGuests} guests</div>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-[12px] border border-[#E7ECF3] bg-white text-[#111111] font-semibold text-[14px] shadow-[0_2px_8px_rgba(107,122,144,0.04)] hover:bg-[#F8FAFC] transition-colors cursor-pointer">
+            <button className="flex items-center gap-2 px-5 py-2.5 rounded-[12px] border border-[#cecbf6] bg-white text-[#26215c] font-semibold text-[14px] shadow-[0_2px_8px_rgba(107,122,144,0.04)] hover:bg-[#f7f6fd] transition-colors cursor-pointer">
               <Share className="w-4 h-4" /> Share
             </button>
-            <button onClick={handleSave} className="flex items-center gap-2 px-5 py-2.5 rounded-[12px] border border-[#E7ECF3] bg-white text-[#111111] font-semibold text-[14px] shadow-[0_2px_8px_rgba(107,122,144,0.04)] hover:bg-[#F8FAFC] transition-colors cursor-pointer">
-              <Heart className={`w-4 h-4 ${isFavorite ? "fill-[#4A90D9] text-[#4A90D9]" : ""}`} /> {isFavorite ? "Saved" : "Save"}
+            <button onClick={handleSave} className="flex items-center gap-2 px-5 py-2.5 rounded-[12px] border border-[#cecbf6] bg-white text-[#26215c] font-semibold text-[14px] shadow-[0_2px_8px_rgba(107,122,144,0.04)] hover:bg-[#f7f6fd] transition-colors cursor-pointer">
+              <Heart className={`w-4 h-4 ${isFavorite ? "fill-[#7f77dd] text-[#7f77dd]" : ""}`} /> {isFavorite ? "Saved" : "Save"}
             </button>
           </div>
         </div>
@@ -670,7 +670,7 @@ export function VenueDetailsClient({ venue, isFirestoreVenue }: Props) {
       {/* Image Gallery */}
       <div className="max-w-[1320px] mx-auto px-6 md:px-12 mb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-3 h-[300px] md:h-[450px] lg:h-[520px]">
-          <div className="md:col-span-7 h-full relative rounded-[20px] md:rounded-l-[20px] md:rounded-r-[4px] overflow-hidden group cursor-pointer border border-[#E7ECF3]">
+          <div className="md:col-span-7 h-full relative rounded-[20px] md:rounded-l-[20px] md:rounded-r-[4px] overflow-hidden group cursor-pointer border border-[#cecbf6]">
             <Image src={images[0]} alt="Hero" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" priority />
             {venue.premium && (
               <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm">
@@ -679,10 +679,10 @@ export function VenueDetailsClient({ venue, isFirestoreVenue }: Props) {
             )}
           </div>
           <div className="hidden md:grid md:col-span-5 grid-cols-2 grid-rows-2 gap-3 h-full">
-            <div className="relative rounded-[4px] overflow-hidden group cursor-pointer border border-[#E7ECF3]"><Image src={images[1] || images[0]} alt="Gallery 1" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" /></div>
-            <div className="relative rounded-tr-[20px] rounded-[4px] overflow-hidden group cursor-pointer border border-[#E7ECF3]"><Image src={images[2] || images[0]} alt="Gallery 2" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" /></div>
-            <div className="relative rounded-[4px] overflow-hidden group cursor-pointer border border-[#E7ECF3]"><Image src={images[3] || images[0]} alt="Gallery 3" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" /></div>
-            <div className="relative rounded-br-[20px] rounded-[4px] overflow-hidden group cursor-pointer border border-[#E7ECF3]">
+            <div className="relative rounded-[4px] overflow-hidden group cursor-pointer border border-[#cecbf6]"><Image src={images[1] || images[0]} alt="Gallery 1" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" /></div>
+            <div className="relative rounded-tr-[20px] rounded-[4px] overflow-hidden group cursor-pointer border border-[#cecbf6]"><Image src={images[2] || images[0]} alt="Gallery 2" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" /></div>
+            <div className="relative rounded-[4px] overflow-hidden group cursor-pointer border border-[#cecbf6]"><Image src={images[3] || images[0]} alt="Gallery 3" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" /></div>
+            <div className="relative rounded-br-[20px] rounded-[4px] overflow-hidden group cursor-pointer border border-[#cecbf6]">
               <Image src={images[4] || images[0]} alt="Gallery 4" fill className="object-cover group-hover:scale-[1.02] transition-transform duration-300 ease-out" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-4">
                  <div className="w-full text-center bg-black/40 backdrop-blur-md py-2.5 rounded-xl text-white font-semibold text-[13px] border border-white/20 shadow-lg">View all photos ({images.length})</div>
@@ -699,53 +699,53 @@ export function VenueDetailsClient({ venue, isFirestoreVenue }: Props) {
         <div className="lg:col-span-7 xl:col-span-8 flex flex-col gap-6">
           
           {/* About Space - Simplified */}
-          <div className="bg-white rounded-[20px] p-6 lg:p-8 border border-[#E7ECF3]">
-            <h2 className="text-[18px] font-bold text-[#111111] mb-3">About this space</h2>
-            <p className="text-[#6B7A90] text-[15px] leading-relaxed">
+          <div className="bg-white rounded-[20px] p-6 lg:p-8 border border-[#cecbf6]">
+            <h2 className="text-[18px] font-bold text-[#26215c] mb-3">About this space</h2>
+            <p className="text-[#534ab7] text-[15px] leading-relaxed">
               {venue.description || "Experience elevated living in this stunning venue featuring panoramic city views, a private terrace, and elegant interiors. Perfect for events, celebrations, photo shoots, or a luxurious getaway."}
             </p>
           </div>
 
           {/* Key Details - Combined and simplified */}
-          <div className="bg-white rounded-[20px] p-6 lg:p-8 border border-[#E7ECF3]">
-            <h2 className="text-[18px] font-bold text-[#111111] mb-5">Details</h2>
+          <div className="bg-white rounded-[20px] p-6 lg:p-8 border border-[#cecbf6]">
+            <h2 className="text-[18px] font-bold text-[#26215c] mb-5">Details</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#F8FAFC]">
-                <Users className="w-5 h-5 text-[#6B7A90] mb-2" />
-                <span className="text-[13px] font-bold text-[#111111]">{venueGuests} guests</span>
+              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#f7f6fd]">
+                <Users className="w-5 h-5 text-[#534ab7] mb-2" />
+                <span className="text-[13px] font-bold text-[#26215c]">{venueGuests} guests</span>
               </div>
-              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#F8FAFC]">
-                <BedDouble className="w-5 h-5 text-[#6B7A90] mb-2" />
-                <span className="text-[13px] font-bold text-[#111111]">4 beds</span>
+              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#f7f6fd]">
+                <BedDouble className="w-5 h-5 text-[#534ab7] mb-2" />
+                <span className="text-[13px] font-bold text-[#26215c]">4 beds</span>
               </div>
-              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#F8FAFC]">
-                <Bath className="w-5 h-5 text-[#6B7A90] mb-2" />
-                <span className="text-[13px] font-bold text-[#111111]">3 baths</span>
+              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#f7f6fd]">
+                <Bath className="w-5 h-5 text-[#534ab7] mb-2" />
+                <span className="text-[13px] font-bold text-[#26215c]">3 baths</span>
               </div>
-              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#F8FAFC]">
-                <Home className="w-5 h-5 text-[#6B7A90] mb-2" />
-                <span className="text-[13px] font-bold text-[#111111]">Entire venue</span>
+              <div className="flex flex-col items-center text-center p-3 rounded-xl bg-[#f7f6fd]">
+                <Home className="w-5 h-5 text-[#534ab7] mb-2" />
+                <span className="text-[13px] font-bold text-[#26215c]">Entire venue</span>
               </div>
             </div>
             
             {/* Amenities inline */}
             {amenities.length > 0 && (
               <>
-                <div className="h-px w-full bg-[#E7ECF3] my-5" />
-                <h3 className="text-[15px] font-bold text-[#111111] mb-4">Amenities</h3>
+                <div className="h-px w-full bg-[#cecbf6] my-5" />
+                <h3 className="text-[15px] font-bold text-[#26215c] mb-4">Amenities</h3>
                 <div className="flex flex-wrap gap-2">
                   {amenities.slice(0, 6).map(a => {
                     const am = AMENITIES_MAP[a as keyof typeof AMENITIES_MAP] || { icon: Square, label: a }
                     const Icon = am.icon
                     return (
-                      <span key={a} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F8FAFC] text-[13px] font-medium text-[#111111]">
-                        <Icon className="w-4 h-4 text-[#6B7A90]" />
+                      <span key={a} className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f7f6fd] text-[13px] font-medium text-[#26215c]">
+                        <Icon className="w-4 h-4 text-[#534ab7]" />
                         {am.label}
                       </span>
                     )
                   })}
                   {amenities.length > 6 && (
-                    <span className="inline-flex items-center px-3 py-2 rounded-lg bg-[#F8FAFC] text-[13px] font-medium text-[#6B7A90]">
+                    <span className="inline-flex items-center px-3 py-2 rounded-lg bg-[#f7f6fd] text-[13px] font-medium text-[#534ab7]">
                       +{amenities.length - 6} more
                     </span>
                   )}
@@ -755,47 +755,47 @@ export function VenueDetailsClient({ venue, isFirestoreVenue }: Props) {
           </div>
 
           {/* Reviews Section */}
-          <div className="bg-white rounded-[20px] p-6 lg:p-8 border border-[#E7ECF3]">
+          <div className="bg-white rounded-[20px] p-6 lg:p-8 border border-[#cecbf6]">
              <VenueReviews venueId={isFirestoreVenue ? venue.id : venue.id.toString()} />
           </div>
         </div>
 
         {/* Right Column (Sticky Booking Card) */}
         <div className="lg:col-span-5 xl:col-span-4 relative">
-          <div className="sticky top-[104px] bg-white rounded-[20px] p-6 border border-[#E7ECF3] flex flex-col gap-5">
+          <div className="sticky top-[104px] bg-white rounded-[20px] p-6 border border-[#cecbf6] flex flex-col gap-5">
             {/* Price */}
             <div className="flex items-baseline gap-1.5">
-              <span className="text-[32px] font-extrabold text-[#111111] leading-none">${venuePrice}</span>
-              <span className="text-[14px] font-medium text-[#6B7A90]">/ night</span>
+              <span className="text-[32px] font-extrabold text-[#26215c] leading-none">${venuePrice}</span>
+              <span className="text-[14px] font-medium text-[#534ab7]">/ night</span>
             </div>
             
             {/* Action Buttons */}
             <div className="flex flex-col gap-2.5">
-              <button onClick={openBookingModal} className="w-full py-3.5 rounded-xl bg-[#111111] text-white font-bold text-[15px] hover:bg-black active:scale-[0.98] transition-all cursor-pointer">
+              <button onClick={openBookingModal} className="w-full py-3.5 rounded-xl bg-[#26215c] text-white font-bold text-[15px] hover:bg-black active:scale-[0.98] transition-all cursor-pointer">
                 Request to book
               </button>
-              <button onClick={handleSave} className="w-full py-3 rounded-xl bg-[#F8FAFC] text-[#111111] font-semibold text-[14px] hover:bg-[#EEF2F7] active:scale-[0.98] flex items-center justify-center gap-2 transition-all cursor-pointer">
-                <Heart className={`w-4 h-4 ${isFavorite ? "fill-[#4A90D9] text-[#4A90D9]" : "text-[#6B7A90]"}`} /> {isFavorite ? "Saved" : "Save"}
+              <button onClick={handleSave} className="w-full py-3 rounded-xl bg-[#f7f6fd] text-[#26215c] font-semibold text-[14px] hover:bg-[#f7f6fd] active:scale-[0.98] flex items-center justify-center gap-2 transition-all cursor-pointer">
+                <Heart className={`w-4 h-4 ${isFavorite ? "fill-[#7f77dd] text-[#7f77dd]" : "text-[#534ab7]"}`} /> {isFavorite ? "Saved" : "Save"}
               </button>
             </div>
             
-            <p className="text-center text-[12px] text-[#6B7A90]">You won&apos;t be charged yet</p>
+            <p className="text-center text-[12px] text-[#534ab7]">You won&apos;t be charged yet</p>
 
-            <div className="h-px w-full bg-[#E7ECF3]" />
+            <div className="h-px w-full bg-[#cecbf6]" />
 
             {/* Host */}
             <div className="flex items-center gap-3 cursor-pointer" onClick={handleProfileClick}>
-               <div className="w-10 h-10 rounded-full bg-[#F5F7FB] border border-[#E7ECF3] flex items-center justify-center">
-                 <User className="w-5 h-5 text-[#6B7A90]" />
+               <div className="w-10 h-10 rounded-full bg-[#f7f6fd] border border-[#cecbf6] flex items-center justify-center">
+                 <User className="w-5 h-5 text-[#534ab7]" />
                </div>
                <div>
-                 <h4 className="text-[14px] font-bold text-[#111111]">Hosted by {submittedBy}</h4>
-                 <p className="text-[11px] text-[#6B7A90]">Superhost</p>
+                 <h4 className="text-[14px] font-bold text-[#26215c]">Hosted by {submittedBy}</h4>
+                 <p className="text-[11px] text-[#534ab7]">Superhost</p>
                </div>
             </div>
             
             {/* Location */}
-            <div className="flex items-center gap-2 text-[13px] text-[#6B7A90]">
+            <div className="flex items-center gap-2 text-[13px] text-[#534ab7]">
               <MapPin className="w-4 h-4" />
               <span>{venueLocation}</span>
             </div>

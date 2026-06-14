@@ -20,8 +20,8 @@ const testimonials = [
 function UserAvatar({ name }: { name: string }) {
   const initial = name.charAt(0)
   return (
-    <div className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1a1a1c]/[0.04] flex-shrink-0">
-      <span className="font-bold text-xs text-[#1a1a1c]/80">{initial}</span>
+    <div className="w-9 h-9 flex items-center justify-center rounded-full bg-[#26215c]/[0.04] flex-shrink-0">
+      <span className="font-bold text-xs text-[#26215c]/80">{initial}</span>
     </div>
   )
 }
@@ -59,7 +59,7 @@ export function Testimonials() {
         }}
         className="relative flex flex-col w-[280px] md:w-[300px] lg:w-[320px] h-[180px] md:h-[195px] rounded-[20px] p-5 md:p-5 select-none cursor-pointer"
         style={{
-          background: "linear-gradient(180deg, #f0f0f0 0%, #e8e8e8 100%)",
+          background: "linear-gradient(180deg, #f7f6fd 0%, #cecbf6 100%)",
           boxShadow: "0 2px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03)",
         }}
       >
@@ -68,34 +68,34 @@ export function Testimonials() {
           <div className="flex items-center gap-2.5">
             <UserAvatar name={testimonial.name} />
             <div>
-              <h4 className="font-semibold text-[#1a1a1c] leading-none text-[13px] tracking-tight">{testimonial.name}</h4>
+              <h4 className="font-semibold text-[#26215c] leading-none text-[13px] tracking-tight">{testimonial.name}</h4>
               <div className="flex gap-0.5 mt-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className={`w-2.5 h-2.5 ${i < testimonial.rating ? "fill-amber-400 text-amber-400" : "text-[#1a1a1c]/10"}`} />
+                  <Star key={i} className={`w-2.5 h-2.5 ${i < testimonial.rating ? "fill-amber-400 text-amber-400" : "text-[#26215c]/10"}`} />
                 ))}
               </div>
             </div>
           </div>
-          <Quote className="w-4 h-4 text-[#1a1a1c]/[0.05]" />
+          <Quote className="w-4 h-4 text-[#26215c]/[0.05]" />
         </div>
 
-        <p className="text-[#1a1a1c]/60 font-medium text-[13px] md:text-sm leading-[1.55] flex-1 tracking-tight line-clamp-3">
+        <p className="text-[#26215c]/60 font-medium text-[13px] md:text-sm leading-[1.55] flex-1 tracking-tight line-clamp-3">
           &ldquo;{t.testimonials[testimonial.reviewKey]}&rdquo;
         </p>
 
         <div className="flex items-center justify-between mt-auto pt-2.5">
-          <div className="flex items-center gap-1.5 text-[#1a1a1c]/40 text-[9px] font-bold uppercase tracking-wider">
-            <MapPin className="w-2.5 h-2.5 text-[#1a1a1c]/30" />
+          <div className="flex items-center gap-1.5 text-[#26215c]/40 text-[9px] font-bold uppercase tracking-wider">
+            <MapPin className="w-2.5 h-2.5 text-[#26215c]/30" />
             <span>{testimonial.location}</span>
           </div>
-          <span className="text-[#1a1a1c]/30 text-[9px] font-semibold tracking-wider">{testimonial.date}</span>
+          <span className="text-[#26215c]/30 text-[9px] font-semibold tracking-wider">{testimonial.date}</span>
         </div>
       </motion.div>
     </motion.div>
   )
 
   return (
-    <section id="testimonials" className="py-16 md:py-20 lg:py-24 [@media(min-width:1600px)]:py-28 bg-[#F7F7F4] overflow-hidden relative z-[1]">
+    <section id="testimonials" className="py-16 md:py-20 lg:py-24 [@media(min-width:1600px)]:py-28 bg-[#f7f6fd] overflow-hidden relative z-[1]">
 
       {/* Mobile & Tablet: Stacked layout */}
       <div className="lg:hidden px-6">
@@ -104,7 +104,7 @@ export function Testimonials() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-black/5 text-black/40 text-[10px] font-bold uppercase tracking-[0.2em] mb-5">
               Guest feedback
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-[#1a1a1c] leading-[0.95] mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-[#26215c] leading-[0.95] mb-8">
               {t.testimonials.title.split(" ").map((word: string, i: number) => (
                 <span key={i} className="block">{word}</span>
               ))}
@@ -114,17 +114,17 @@ export function Testimonials() {
           <ScrollReveal animation="up" delay={0.1}>
             <div className="flex items-center gap-10 justify-center">
               <div className="flex flex-col items-center">
-                <p className="text-3xl md:text-4xl font-bold text-[#1a1a1c] tracking-tighter leading-none">
+                <p className="text-3xl md:text-4xl font-bold text-[#26215c] tracking-tighter leading-none">
                   <Counter value={4.9} decimals={1} delay={0.3} />
                 </p>
-                <p className="text-[9px] font-bold text-[#1a1a1c]/30 uppercase tracking-[0.15em] mt-2">Avg Rating</p>
+                <p className="text-[9px] font-bold text-[#26215c]/30 uppercase tracking-[0.15em] mt-2">Avg Rating</p>
               </div>
               <div className="w-px h-10 bg-black/[0.06]" />
               <div className="flex flex-col items-center">
-                <p className="text-3xl md:text-4xl font-bold text-[#1a1a1c] tracking-tighter leading-none">
+                <p className="text-3xl md:text-4xl font-bold text-[#26215c] tracking-tighter leading-none">
                   <Counter value={1000} suffix="+" delay={0.5} />
                 </p>
-                <p className="text-[9px] font-bold text-[#1a1a1c]/30 uppercase tracking-[0.15em] mt-2">Bookings</p>
+                <p className="text-[9px] font-bold text-[#26215c]/30 uppercase tracking-[0.15em] mt-2">Bookings</p>
               </div>
             </div>
           </ScrollReveal>
@@ -136,8 +136,8 @@ export function Testimonials() {
 
         {/* Mobile marquee — full width */}
         <div className="relative">
-          <div className="absolute inset-y-0 left-0 w-16 z-10 bg-gradient-to-r from-[#F7F7F4] to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-16 z-10 bg-gradient-to-l from-[#F7F7F4] to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-16 z-10 bg-gradient-to-r from-[#f7f6fd] to-transparent pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 z-10 bg-gradient-to-l from-[#f7f6fd] to-transparent pointer-events-none" />
 
           <div className="flex flex-col gap-5 overflow-hidden py-4">
             <div className="flex overflow-hidden select-none">
@@ -177,7 +177,7 @@ export function Testimonials() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-black/5 text-black/40 text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
                   Guest feedback
                 </span>
-                <h2 className="text-5xl xl:text-6xl [@media(min-width:1600px)]:text-7xl font-bold tracking-tighter text-[#1a1a1c] leading-[0.95] mb-8 xl:mb-10">
+                <h2 className="text-5xl xl:text-6xl [@media(min-width:1600px)]:text-7xl font-bold tracking-tighter text-[#26215c] leading-[0.95] mb-8 xl:mb-10">
                   {t.testimonials.title.split(" ").map((word: string, i: number) => (
                     <span key={i} className="block">{word}</span>
                   ))}
@@ -187,17 +187,17 @@ export function Testimonials() {
               <ScrollReveal animation="up" delay={0.1}>
                 <div className="flex items-center gap-12 xl:gap-14">
                   <div className="flex flex-col">
-                    <p className="text-4xl xl:text-5xl font-bold text-[#1a1a1c] tracking-tighter leading-none">
+                    <p className="text-4xl xl:text-5xl font-bold text-[#26215c] tracking-tighter leading-none">
                       <Counter value={4.9} decimals={1} delay={0.3} />
                     </p>
-                    <p className="text-[10px] font-bold text-[#1a1a1c]/25 uppercase tracking-[0.15em] mt-3">Avg Rating</p>
+                    <p className="text-[10px] font-bold text-[#26215c]/25 uppercase tracking-[0.15em] mt-3">Avg Rating</p>
                   </div>
                   <div className="w-px h-12 bg-black/[0.06]" />
                   <div className="flex flex-col">
-                    <p className="text-4xl xl:text-5xl font-bold text-[#1a1a1c] tracking-tighter leading-none">
+                    <p className="text-4xl xl:text-5xl font-bold text-[#26215c] tracking-tighter leading-none">
                       <Counter value={1000} suffix="+" delay={0.5} />
                     </p>
-                    <p className="text-[10px] font-bold text-[#1a1a1c]/25 uppercase tracking-[0.15em] mt-3">Bookings</p>
+                    <p className="text-[10px] font-bold text-[#26215c]/25 uppercase tracking-[0.15em] mt-3">Bookings</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -218,7 +218,7 @@ export function Testimonials() {
               className="absolute inset-y-0 left-0 z-30 pointer-events-none"
               style={{
                 width: "220px",
-                background: "linear-gradient(to right, #F7F7F4 0%, #F7F7F4 20%, rgba(247,247,244,0.85) 45%, rgba(247,247,244,0) 100%)",
+                background: "linear-gradient(to right, #f7f6fd 0%, #f7f6fd 20%, rgba(247,247,244,0.85) 45%, rgba(247,247,244,0) 100%)",
               }}
             />
             {/* Fade mask — right edge */}
@@ -226,7 +226,7 @@ export function Testimonials() {
               className="absolute inset-y-0 right-0 z-30 pointer-events-none"
               style={{
                 width: "120px",
-                background: "linear-gradient(to left, #F7F7F4 0%, rgba(247,247,244,0) 100%)",
+                background: "linear-gradient(to left, #f7f6fd 0%, rgba(247,247,244,0) 100%)",
               }}
             />
 

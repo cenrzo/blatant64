@@ -35,10 +35,10 @@ export function ExploreByCategory({ cityHash }: { cityHash?: string } = {}) {
   const isGeorgian = language === "ka"
   
   return (
-    <section className="w-full overflow-hidden bg-[#EEF3F8] relative z-[20]" style={{ marginTop: "-60px" }}>
+    <section className="w-full overflow-hidden bg-[#f7f6fd] relative z-[20]" style={{ marginTop: "-60px" }}>
       <div className="w-full max-w-[1400px] mx-auto px-6 md:px-12 pt-10 md:pt-14 pb-6 md:pb-8 relative z-[1]">
         <div className="flex items-end justify-between mb-6">
-          <h2 className="text-[#1a1a1c] text-[28px] md:text-[34px] font-bold tracking-tight">
+          <h2 className="text-[#26215c] text-[28px] md:text-[34px] font-bold tracking-tight">
             {isGeorgian ? "კატეგორიები" : "Categories"}
           </h2>
         </div>

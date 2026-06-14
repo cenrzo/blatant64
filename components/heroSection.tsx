@@ -87,8 +87,8 @@ export function HeroSection() {
           className="flex flex-col items-center text-center max-w-[900px] w-full"
         >
 
-          <h1 className="text-[#EEF3F8] font-bold text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem] leading-[1.05] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]">
-            Discover exceptional<br className="hidden sm:block" /> spaces in <span className="text-[#EEF3F8] italic font-serif font-light tracking-normal">Georgia</span>
+          <h1 className="text-[#f7f6fd] font-bold text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[5.5rem] leading-[1.05] tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]">
+            Discover exceptional<br className="hidden sm:block" /> spaces in <span className="text-[#f7f6fd] italic font-serif font-light tracking-normal">Georgia</span>
           </h1>
         </motion.div>
 
@@ -99,69 +99,69 @@ export function HeroSection() {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="absolute bottom-[60px] left-1/2 w-[calc(100%-3rem)] md:w-full max-w-[680px] z-30"
         >
-          <div className="flex items-stretch bg-[#EEF3F8] rounded-t-[24px] rounded-b-none p-2 shadow-[0_-8px_24px_rgba(107,122,144,0.08)] relative">
+          <div className="flex items-stretch bg-[#f7f6fd] rounded-t-[24px] rounded-b-none p-2 shadow-[0_-8px_24px_rgba(107,122,144,0.08)] relative">
             {/* Left Curve Connection */}
             <svg className="absolute -left-[24px] bottom-0 w-[24px] h-[24px] pointer-events-none hidden md:block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M24 0V24H0C13.2548 24 24 13.2548 24 0Z" fill="#EEF3F8" />
+              <path d="M24 0V24H0C13.2548 24 24 13.2548 24 0Z" fill="#f7f6fd" />
             </svg>
             {/* Right Curve Connection */}
             <svg className="absolute -right-[24px] bottom-0 w-[24px] h-[24px] pointer-events-none hidden md:block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 0V24H24C10.7452 24 0 13.2548 0 0Z" fill="#EEF3F8" />
+              <path d="M0 0V24H24C10.7452 24 0 13.2548 0 0Z" fill="#f7f6fd" />
             </svg>
 
             {/* Date Field */}
             <div
-              className={`flex-1 flex items-center gap-3 px-5 py-4 cursor-pointer rounded-xl transition-colors duration-200 relative ${activeField === "date" ? "bg-[#F5F7FB]" : "hover:bg-[#F5F7FB]/60"}`}
+              className={`flex-1 flex items-center gap-3 px-5 py-4 cursor-pointer rounded-xl transition-colors duration-200 relative ${activeField === "date" ? "bg-[#f7f6fd]" : "hover:bg-[#f7f6fd]/60"}`}
               onClick={() => setActiveField(activeField === "date" ? null : "date")}
             >
-              <Calendar className={`w-4 h-4 flex-shrink-0 ${activeField === "date" ? "text-[#1a1a1c]" : "text-[#6B7A90]"}`} />
+              <Calendar className={`w-4 h-4 flex-shrink-0 ${activeField === "date" ? "text-[#26215c]" : "text-[#534ab7]"}`} />
               <div className="flex flex-col min-w-0">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[#6B7A90] leading-none mb-1">When</span>
-                <span className="text-[14px] font-semibold text-[#1a1a1c] truncate">Any date</span>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[#534ab7] leading-none mb-1">When</span>
+                <span className="text-[14px] font-semibold text-[#26215c] truncate">Any date</span>
               </div>
             </div>
 
             {/* Divider */}
-            <div className="w-px self-stretch my-2.5 bg-[#E7ECF3]" />
+            <div className="w-px self-stretch my-2.5 bg-[#cecbf6]" />
 
             {/* Category Field */}
             <div
               ref={categoryRef}
-              className={`flex-1 flex items-center gap-3 px-5 py-4 cursor-pointer rounded-xl transition-colors duration-200 relative ${activeField === "category" ? "bg-[#F5F7FB]" : "hover:bg-[#F5F7FB]/60"}`}
+              className={`flex-1 flex items-center gap-3 px-5 py-4 cursor-pointer rounded-xl transition-colors duration-200 relative ${activeField === "category" ? "bg-[#f7f6fd]" : "hover:bg-[#f7f6fd]/60"}`}
               onClick={() => {
                 setCategoryOpen(!categoryOpen);
                 setGuestsOpen(false);
                 setActiveField("category");
               }}
             >
-              <Home className={`w-4 h-4 flex-shrink-0 ${activeField === "category" ? "text-[#1a1a1c]" : "text-[#6B7A90]"}`} />
+              <Home className={`w-4 h-4 flex-shrink-0 ${activeField === "category" ? "text-[#26215c]" : "text-[#534ab7]"}`} />
               <div className="flex flex-col min-w-0 flex-1">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[#6B7A90] leading-none mb-1">Venue</span>
-                <span className="text-[14px] font-semibold text-[#1a1a1c] truncate">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[#534ab7] leading-none mb-1">Venue</span>
+                <span className="text-[14px] font-semibold text-[#26215c] truncate">
                   {selectedCategory === "all" ? "All types" : categories.find(c => c.value === selectedCategory)?.label}
                 </span>
               </div>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${categoryOpen ? "rotate-180 text-[#1a1a1c]" : "text-[#6B7A90]"}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${categoryOpen ? "rotate-180 text-[#26215c]" : "text-[#534ab7]"}`} />
 
               {categoryOpen && (
-                <div className="absolute top-[calc(100%+8px)] left-0 w-[220px] bg-white rounded-xl shadow-[0_12px_40px_rgba(107,122,144,0.14),0_4px_12px_rgba(107,122,144,0.06)] border border-[#E7ECF3] overflow-hidden z-[9999] py-1">
+                <div className="absolute top-[calc(100%+8px)] left-0 w-[220px] bg-white rounded-xl shadow-[0_12px_40px_rgba(107,122,144,0.14),0_4px_12px_rgba(107,122,144,0.06)] border border-[#cecbf6] overflow-hidden z-[9999] py-1">
                   {categories.map((cat) => (
                     <button
                       key={cat.value}
                       onClick={(e) => { e.stopPropagation(); setSelectedCategory(cat.value); setCategoryOpen(false); }}
-                      className={`w-full text-left px-3 py-2.5 flex items-center gap-2.5 transition-colors duration-150 ${selectedCategory === cat.value ? "bg-[#F5F7FB]" : "hover:bg-[#F5F7FB]/60"}`}
+                      className={`w-full text-left px-3 py-2.5 flex items-center gap-2.5 transition-colors duration-150 ${selectedCategory === cat.value ? "bg-[#f7f6fd]" : "hover:bg-[#f7f6fd]/60"}`}
                     >
-                      <div className="w-7 h-7 rounded-lg bg-[#F5F7FB] flex items-center justify-center flex-shrink-0 border border-[#E7ECF3]/60">
+                      <div className="w-7 h-7 rounded-lg bg-[#f7f6fd] flex items-center justify-center flex-shrink-0 border border-[#cecbf6]/60">
                         {(() => {
                           const Icon = { all: LayoutGrid, apartments: Building2, villas: TreePalm, rooftops: Sunset, studios: Clapperboard }[cat.value] || LayoutGrid;
-                          return <Icon className="w-3.5 h-3.5 text-[#1a1a1c]" />;
+                          return <Icon className="w-3.5 h-3.5 text-[#26215c]" />;
                         })()}
                       </div>
-                      <span className={`text-[13px] flex-1 ${selectedCategory === cat.value ? "text-[#1a1a1c] font-semibold" : "text-[#1a1a1c]/70 font-medium"}`}>
+                      <span className={`text-[13px] flex-1 ${selectedCategory === cat.value ? "text-[#26215c] font-semibold" : "text-[#26215c]/70 font-medium"}`}>
                         {cat.label}
                       </span>
                       {selectedCategory === cat.value && (
-                        <Check className="w-3.5 h-3.5 text-[#1a1a1c]" />
+                        <Check className="w-3.5 h-3.5 text-[#26215c]" />
                       )}
                     </button>
                   ))}
@@ -170,43 +170,43 @@ export function HeroSection() {
             </div>
 
             {/* Divider */}
-            <div className="w-px self-stretch my-2.5 bg-[#E7ECF3]" />
+            <div className="w-px self-stretch my-2.5 bg-[#cecbf6]" />
 
             {/* Guests Field */}
             <div
               ref={guestsRef}
-              className={`flex-1 flex items-center gap-3 px-5 py-4 cursor-pointer rounded-xl transition-colors duration-200 relative ${activeField === "guests" ? "bg-[#F5F7FB]" : "hover:bg-[#F5F7FB]/60"}`}
+              className={`flex-1 flex items-center gap-3 px-5 py-4 cursor-pointer rounded-xl transition-colors duration-200 relative ${activeField === "guests" ? "bg-[#f7f6fd]" : "hover:bg-[#f7f6fd]/60"}`}
               onClick={() => {
                 setGuestsOpen(!guestsOpen);
                 setCategoryOpen(false);
                 setActiveField("guests");
               }}
             >
-              <Users className={`w-4 h-4 flex-shrink-0 ${activeField === "guests" ? "text-[#1a1a1c]" : "text-[#6B7A90]"}`} />
+              <Users className={`w-4 h-4 flex-shrink-0 ${activeField === "guests" ? "text-[#26215c]" : "text-[#534ab7]"}`} />
               <div className="flex flex-col min-w-0 flex-1">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[#6B7A90] leading-none mb-1">Guests</span>
-                <span className="text-[14px] font-semibold text-[#1a1a1c] truncate">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.06em] text-[#534ab7] leading-none mb-1">Guests</span>
+                <span className="text-[14px] font-semibold text-[#26215c] truncate">
                   {selectedGuests ? `${selectedGuests}` : "Any size"}
                 </span>
               </div>
-              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${guestsOpen ? "rotate-180 text-[#1a1a1c]" : "text-[#6B7A90]"}`} />
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${guestsOpen ? "rotate-180 text-[#26215c]" : "text-[#534ab7]"}`} />
 
               {guestsOpen && (
-                <div className="absolute top-[calc(100%+8px)] left-0 w-[200px] bg-white rounded-xl shadow-[0_12px_40px_rgba(107,122,144,0.14),0_4px_12px_rgba(107,122,144,0.06)] border border-[#E7ECF3] overflow-hidden z-[9999] py-1">
+                <div className="absolute top-[calc(100%+8px)] left-0 w-[200px] bg-white rounded-xl shadow-[0_12px_40px_rgba(107,122,144,0.14),0_4px_12px_rgba(107,122,144,0.06)] border border-[#cecbf6] overflow-hidden z-[9999] py-1">
                   {guestOptions.map((g) => (
                     <button
                       key={g.value}
                       onClick={(e) => { e.stopPropagation(); setSelectedGuests(g.value); setGuestsOpen(false); }}
-                      className={`w-full text-left px-3 py-2.5 flex items-center gap-2.5 transition-colors duration-150 ${selectedGuests === g.value ? "bg-[#F5F7FB]" : "hover:bg-[#F5F7FB]/60"}`}
+                      className={`w-full text-left px-3 py-2.5 flex items-center gap-2.5 transition-colors duration-150 ${selectedGuests === g.value ? "bg-[#f7f6fd]" : "hover:bg-[#f7f6fd]/60"}`}
                     >
                       <div className="flex flex-col flex-1">
-                        <span className={`text-[13px] ${selectedGuests === g.value ? "text-[#1a1a1c] font-semibold" : "text-[#1a1a1c]/70 font-medium"}`}>
+                        <span className={`text-[13px] ${selectedGuests === g.value ? "text-[#26215c] font-semibold" : "text-[#26215c]/70 font-medium"}`}>
                           {g.label}
                         </span>
-                        <span className="text-[10px] text-[#6B7A90] font-medium">{g.sub}</span>
+                        <span className="text-[10px] text-[#534ab7] font-medium">{g.sub}</span>
                       </div>
                       {selectedGuests === g.value && (
-                        <Check className="w-3.5 h-3.5 text-[#1a1a1c]" />
+                        <Check className="w-3.5 h-3.5 text-[#26215c]" />
                       )}
                     </button>
                   ))}
@@ -217,7 +217,7 @@ export function HeroSection() {
             {/* Search Button */}
             <button
               onClick={handleSearch}
-              className="bg-[#1a1a1c] hover:bg-black text-white rounded-xl px-6 py-4 font-semibold text-[14px] ml-1.5 flex items-center gap-2.5 cursor-pointer transition-colors duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.15)]"
+              className="bg-[#26215c] hover:bg-black text-white rounded-xl px-6 py-4 font-semibold text-[14px] ml-1.5 flex items-center gap-2.5 cursor-pointer transition-colors duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.15)]"
             >
               <Search className="w-[18px] h-[18px]" />
               <span className="hidden sm:inline">Search</span>

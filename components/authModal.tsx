@@ -18,10 +18,10 @@ export function AuthModal({ isOpen, onClose, initialMode = "signin" }: AuthModal
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300 overflow-y-auto">
-      <div className="w-full max-w-md bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-8 relative max-h-[90vh] overflow-y-auto border border-[#E7ECF3]">
+      <div className="w-full max-w-md bg-white rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.12)] p-8 relative max-h-[90vh] overflow-y-auto border border-[#cecbf6]">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-[12px] hover:bg-[#F5F7FB] text-[#111111] transition-[background-color,color] duration-300 z-10"
+          className="absolute top-4 right-4 p-2 rounded-[12px] hover:bg-[#f7f6fd] text-[#26215c] transition-[background-color,color] duration-300 z-10"
         >
           <X className="w-6 h-6" />
         </button>

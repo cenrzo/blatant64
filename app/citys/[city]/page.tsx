@@ -10,7 +10,7 @@ export default function CityPage() {
   const city = params.city as string
 
   return (
-    <main className="min-h-screen bg-[#EEF3F8] relative flex flex-col">
+    <main className="min-h-screen bg-[#f7f6fd] relative flex flex-col">
       <Header />
       
       {/* Spacer for fixed header */}

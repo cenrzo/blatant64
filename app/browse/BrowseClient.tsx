@@ -110,7 +110,7 @@ function VenueCard({
     <div className="group relative bg-white rounded-[16px] overflow-hidden border border-[rgba(74,95,127,0.08)] hover:shadow-[0_16px_48px_rgba(74,95,127,0.12)] hover:-translate-y-1.5 transition-all duration-[250ms] cursor-pointer">
       <Link href={`/venues/${detailPageId}`} className="block">
         {/* Image Container */}
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#F7F9FC]">
+        <div className="relative aspect-[4/3] overflow-hidden bg-[#f7f6fd]">
           {imageLoading ? (
             <Skeleton className="w-full h-full" />
           ) : (
@@ -127,7 +127,7 @@ function VenueCard({
           {/* Premium Badge */}
           {venue.premium && (
             <div className="absolute top-3.5 left-3.5 z-10">
-              <span className="bg-[#3B4E69] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-md">
+              <span className="bg-[#534ab7] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-md">
                 Popular
               </span>
             </div>
@@ -144,7 +144,7 @@ function VenueCard({
           >
             <Heart
               className={`w-4.5 h-4.5 transition-colors ${
-                isFavorited ? "fill-[#4A5F7F] text-[#4A5F7F]" : "text-[#6B7280]"
+                isFavorited ? "fill-[#7f77dd] text-[#7f77dd]" : "text-[#534ab7]"
               }`}
             />
           </button>
@@ -153,12 +153,12 @@ function VenueCard({
         {/* Card Content */}
         <div className="p-5">
           {/* Title */}
-          <h3 className="text-[16px] font-bold text-[#111827] mb-2 truncate leading-snug">
+          <h3 className="text-[16px] font-bold text-[#26215c] mb-2 truncate leading-snug">
             {venueName}
           </h3>
 
           {/* Location */}
-          <div className="flex items-center gap-1.5 text-[#6B7280] mb-4">
+          <div className="flex items-center gap-1.5 text-[#534ab7] mb-4">
             <MapPin className="w-3.5 h-3.5" />
             <span className="text-[13px] font-medium truncate">
               {venueLocation}
@@ -166,14 +166,14 @@ function VenueCard({
           </div>
 
           {/* Guests + Sqm Row */}
-          <div className="flex items-center gap-4 text-[#6B7280] mb-4">
+          <div className="flex items-center gap-4 text-[#534ab7] mb-4">
             <div className="flex items-center gap-1.5">
               <Users className="w-3.5 h-3.5" />
               <span className="text-[12px] font-medium">
                 Up to {venue.guests} guests
               </span>
             </div>
-            <span className="text-[12px] text-[#6B7280]/60">•</span>
+            <span className="text-[12px] text-[#534ab7]/60">•</span>
             <span className="text-[12px] font-medium">
               {venue.sqm || Math.floor(venue.guests * 8)} m²
             </span>
@@ -181,13 +181,13 @@ function VenueCard({
 
           {/* Price */}
           <div className="mb-4">
-            <span className="text-[20px] font-bold text-[#111827]">${venue.price}</span>
-            <span className="text-[12px] text-[#6B7280] font-medium ml-1">/night</span>
+            <span className="text-[20px] font-bold text-[#26215c]">${venue.price}</span>
+            <span className="text-[12px] text-[#534ab7] font-medium ml-1">/night</span>
           </div>
 
           {/* View Details Row - with separator */}
           <div className="pt-3 border-t border-[rgba(74,95,127,0.08)]">
-            <span className="text-[13px] font-semibold text-[#4A5F7F] flex items-center gap-1 group-hover:gap-2 transition-all">
+            <span className="text-[13px] font-semibold text-[#7f77dd] flex items-center gap-1 group-hover:gap-2 transition-all">
               View details
               <ChevronRight className="w-4 h-4" />
             </span>
@@ -252,11 +252,11 @@ function FilterSidebar({
           onClick={() => setLocationOpen(!locationOpen)}
           className="w-full flex items-center justify-between mb-4 cursor-pointer"
         >
-          <h3 className="text-[14px] font-bold text-[#111827]">Location</h3>
+          <h3 className="text-[14px] font-bold text-[#26215c]">Location</h3>
           {locationOpen ? (
-            <ChevronUp className="w-4 h-4 text-[#6B7280]" />
+            <ChevronUp className="w-4 h-4 text-[#534ab7]" />
           ) : (
-            <ChevronDown className="w-4 h-4 text-[#6B7280]" />
+            <ChevronDown className="w-4 h-4 text-[#534ab7]" />
           )}
         </button>
         
@@ -268,8 +268,8 @@ function FilterSidebar({
                 onClick={() => setActiveCity(loc === "All Locations" ? "all" : loc)}
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-[10px] text-[13px] font-medium transition-colors cursor-pointer ${
                   (activeCity === loc || (loc === "All Locations" && activeCity === "all"))
-                    ? "bg-[#111827] text-white" 
-                    : "text-[#6B7280] hover:bg-[#F7F9FC]"
+                    ? "bg-[#26215c] text-white" 
+                    : "text-[#534ab7] hover:bg-[#f7f6fd]"
                 }`}
               >
                 <span>{loc}</span>
@@ -288,19 +288,19 @@ function FilterSidebar({
           onClick={() => setPriceOpen(!priceOpen)}
           className="w-full flex items-center justify-between mb-4 cursor-pointer"
         >
-          <h3 className="text-[14px] font-bold text-[#111827]">Price Range</h3>
+          <h3 className="text-[14px] font-bold text-[#26215c]">Price Range</h3>
           {priceOpen ? (
-            <ChevronUp className="w-4 h-4 text-[#6B7280]" />
+            <ChevronUp className="w-4 h-4 text-[#534ab7]" />
           ) : (
-            <ChevronDown className="w-4 h-4 text-[#6B7280]" />
+            <ChevronDown className="w-4 h-4 text-[#534ab7]" />
           )}
         </button>
         
         {priceOpen && (
           <div>
-            <div className="relative h-2 bg-[#E5E7EB] rounded-full mb-4">
+            <div className="relative h-2 bg-[#cecbf6] rounded-full mb-4">
               <div 
-                className="absolute h-full bg-[#4A5F7F] rounded-full"
+                className="absolute h-full bg-[#7f77dd] rounded-full"
                 style={{ 
                   left: `${(priceRange[0] / 2000) * 100}%`, 
                   width: `${((priceRange[1] - priceRange[0]) / 2000) * 100}%` 
@@ -315,7 +315,7 @@ function FilterSidebar({
                 className="absolute w-full h-full opacity-0 cursor-pointer"
               />
             </div>
-            <div className="flex items-center justify-between text-[12px] text-[#6B7280]">
+            <div className="flex items-center justify-between text-[12px] text-[#534ab7]">
               <span>$0</span>
               <span>$2,000+</span>
             </div>
@@ -329,11 +329,11 @@ function FilterSidebar({
           onClick={() => setCapacityOpen(!capacityOpen)}
           className="w-full flex items-center justify-between mb-4 cursor-pointer"
         >
-          <h3 className="text-[14px] font-bold text-[#111827]">Capacity</h3>
+          <h3 className="text-[14px] font-bold text-[#26215c]">Capacity</h3>
           {capacityOpen ? (
-            <ChevronUp className="w-4 h-4 text-[#6B7280]" />
+            <ChevronUp className="w-4 h-4 text-[#534ab7]" />
           ) : (
-            <ChevronDown className="w-4 h-4 text-[#6B7280]" />
+            <ChevronDown className="w-4 h-4 text-[#534ab7]" />
           )}
         </button>
         
@@ -346,14 +346,14 @@ function FilterSidebar({
               >
                 <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors ${
                   selectedCapacity.includes(opt.value) 
-                    ? "bg-[#4A5F7F] border-[#4A5F7F]" 
-                    : "border-[#D1D5DB] group-hover:border-[#9CA3AF]"
+                    ? "bg-[#7f77dd] border-[#7f77dd]" 
+                    : "border-[#cecbf6] group-hover:border-[#afa9ec]"
                 }`}>
                   {selectedCapacity.includes(opt.value) && (
                     <Check className="w-3 h-3 text-white" />
                   )}
                 </div>
-                <span className="text-[13px] text-[#6B7280] group-hover:text-[#111827] transition-colors">
+                <span className="text-[13px] text-[#534ab7] group-hover:text-[#26215c] transition-colors">
                   {opt.label}
                 </span>
               </label>
@@ -368,11 +368,11 @@ function FilterSidebar({
           onClick={() => setAmenitiesOpen(!amenitiesOpen)}
           className="w-full flex items-center justify-between mb-4 cursor-pointer"
         >
-          <h3 className="text-[14px] font-bold text-[#111827]">Amenities</h3>
+          <h3 className="text-[14px] font-bold text-[#26215c]">Amenities</h3>
           {amenitiesOpen ? (
-            <ChevronUp className="w-4 h-4 text-[#6B7280]" />
+            <ChevronUp className="w-4 h-4 text-[#534ab7]" />
           ) : (
-            <ChevronDown className="w-4 h-4 text-[#6B7280]" />
+            <ChevronDown className="w-4 h-4 text-[#534ab7]" />
           )}
         </button>
         
@@ -385,14 +385,14 @@ function FilterSidebar({
               >
                 <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors ${
                   selectedAmenities.includes(opt.value) 
-                    ? "bg-[#4A5F7F] border-[#4A5F7F]" 
-                    : "border-[#D1D5DB] group-hover:border-[#9CA3AF]"
+                    ? "bg-[#7f77dd] border-[#7f77dd]" 
+                    : "border-[#cecbf6] group-hover:border-[#afa9ec]"
                 }`}>
                   {selectedAmenities.includes(opt.value) && (
                     <Check className="w-3 h-3 text-white" />
                   )}
                 </div>
-                <span className="text-[13px] text-[#6B7280] group-hover:text-[#111827] transition-colors flex items-center gap-2">
+                <span className="text-[13px] text-[#534ab7] group-hover:text-[#26215c] transition-colors flex items-center gap-2">
                   <opt.icon className="w-4 h-4" />
                   {opt.label}
                 </span>
@@ -591,21 +591,21 @@ export default function BrowseClient({ venuesData }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFDFD]">
+    <div className="min-h-screen bg-[#f7f6fd]">
       {/* STICKY TOP FILTER BAR */}
       <div className="sticky top-[64px] z-40 bg-white border-b border-[rgba(74,95,127,0.08)] shadow-[0_4px_20px_rgba(0,0,0,0.02)] pt-4 pb-4">
         <div className="w-full max-w-[1600px] xl:max-w-[1800px] mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             
             {/* Search Input */}
-            <div className="flex items-center gap-2.5 bg-[#F7F9FC] rounded-[12px] px-4 py-2.5 w-full md:max-w-[320px] border border-[rgba(74,95,127,0.06)] focus-within:border-[#4A5F7F]/30 focus-within:ring-2 focus-within:ring-[#4A5F7F]/10 transition-all">
-              <Search className="w-4 h-4 text-[#6B7280]" />
+            <div className="flex items-center gap-2.5 bg-[#f7f6fd] rounded-[12px] px-4 py-2.5 w-full md:max-w-[320px] border border-[rgba(74,95,127,0.06)] focus-within:border-[#7f77dd]/30 focus-within:ring-2 focus-within:ring-[#7f77dd]/10 transition-all">
+              <Search className="w-4 h-4 text-[#534ab7]" />
               <input
                 type="text"
                 placeholder="Search venues..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent text-[14px] font-medium text-[#111827] placeholder:text-[#6B7280] outline-none w-full"
+                className="bg-transparent text-[14px] font-medium text-[#26215c] placeholder:text-[#534ab7] outline-none w-full"
               />
             </div>
 
@@ -617,8 +617,8 @@ export default function BrowseClient({ venuesData }: Props) {
                   onClick={() => setActiveCategory(cat.value)}
                   className={`whitespace-nowrap px-4 py-2 rounded-full text-[14px] font-medium transition-all cursor-pointer ${
                     activeCategory === cat.value
-                      ? "bg-[#111827] text-white shadow-sm"
-                      : "bg-white text-[#6B7280] hover:bg-[#F7F9FC] border border-[rgba(74,95,127,0.08)] hover:text-[#111827]"
+                      ? "bg-[#26215c] text-white shadow-sm"
+                      : "bg-white text-[#534ab7] hover:bg-[#f7f6fd] border border-[rgba(74,95,127,0.08)] hover:text-[#26215c]"
                   }`}
                 >
                   {cat.label}
@@ -630,22 +630,22 @@ export default function BrowseClient({ venuesData }: Props) {
             <div className="flex items-center gap-3 w-full md:w-auto justify-between md:justify-end">
               <button 
                 onClick={() => setFiltersOpen(true)}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-[12px] text-[14px] font-medium text-[#111827] bg-white border border-[rgba(74,95,127,0.12)] hover:bg-[#F7F9FC] transition-colors cursor-pointer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-[12px] text-[14px] font-medium text-[#26215c] bg-white border border-[rgba(74,95,127,0.12)] hover:bg-[#f7f6fd] transition-colors cursor-pointer"
               >
                 <SlidersHorizontal className="w-4 h-4" />
                 Filters
                 {(selectedAmenities.length > 0 || selectedCapacity.length > 0 || priceRange[0] > 0 || priceRange[1] < 2000 || activeCity !== "all") && (
-                  <span className="w-2 h-2 rounded-full bg-[#111827] ml-1" />
+                  <span className="w-2 h-2 rounded-full bg-[#26215c] ml-1" />
                 )}
               </button>
 
               <div className="relative" ref={sortRef}>
                 <button
                   onClick={() => setSortOpen(!sortOpen)}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-[12px] text-[14px] font-medium text-[#111827] bg-white border border-[rgba(74,95,127,0.12)] hover:bg-[#F7F9FC] transition-colors cursor-pointer"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-[12px] text-[14px] font-medium text-[#26215c] bg-white border border-[rgba(74,95,127,0.12)] hover:bg-[#f7f6fd] transition-colors cursor-pointer"
                 >
                   {sortBy === "popular" ? "Popular" : sortBy === "price-low" ? "Price: Low" : sortBy === "price-high" ? "Price: High" : "Guests"}
-                  <ChevronDown className={`w-4 h-4 text-[#6B7280] transition-transform ${sortOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown className={`w-4 h-4 text-[#534ab7] transition-transform ${sortOpen ? "rotate-180" : ""}`} />
                 </button>
                 {sortOpen && (
                   <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-[12px] shadow-[0_8px_32px_rgba(74,95,127,0.12)] border border-[rgba(74,95,127,0.08)] overflow-hidden z-50">
@@ -659,10 +659,10 @@ export default function BrowseClient({ venuesData }: Props) {
                         <button
                           key={opt.value}
                           onClick={() => { setSortBy(opt.value); setSortOpen(false); }}
-                          className="w-full flex items-center justify-between px-4 py-2.5 text-[14px] font-medium text-[#6B7280] hover:bg-[#F7F9FC] hover:text-[#111827] transition-colors text-left cursor-pointer"
+                          className="w-full flex items-center justify-between px-4 py-2.5 text-[14px] font-medium text-[#534ab7] hover:bg-[#f7f6fd] hover:text-[#26215c] transition-colors text-left cursor-pointer"
                         >
                           <span>{opt.label}</span>
-                          {sortBy === opt.value && <Check className="w-4 h-4 text-[#111827]" />}
+                          {sortBy === opt.value && <Check className="w-4 h-4 text-[#26215c]" />}
                         </button>
                       ))}
                     </div>
@@ -681,7 +681,7 @@ export default function BrowseClient({ venuesData }: Props) {
         <div className="flex-1 min-w-0">
           {/* Results count */}
           <div className="mb-6 flex justify-between items-end">
-            <p className="text-[16px] font-bold text-[#111827]">
+            <p className="text-[16px] font-bold text-[#26215c]">
               {filtered.length} {filtered.length === 1 ? 'venue' : 'venues'} found
             </p>
           </div>
@@ -689,7 +689,7 @@ export default function BrowseClient({ venuesData }: Props) {
           {/* Venue Cards Grid */}
             {filtered.length === 0 ? (
               <div className="text-center py-20 bg-white rounded-[16px] border border-[rgba(74,95,127,0.08)]">
-                <p className="text-lg text-[#6B7280] mb-6">
+                <p className="text-lg text-[#534ab7] mb-6">
                   No venues match your search criteria
                 </p>
                 <button 
@@ -699,7 +699,7 @@ export default function BrowseClient({ venuesData }: Props) {
                     setSearchQuery("")
                     setPriceRange([0, 2000])
                   }}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#111827] text-white rounded-[14px] font-semibold text-[14px] hover:bg-black transition-colors cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#26215c] text-white rounded-[14px] font-semibold text-[14px] hover:bg-black transition-colors cursor-pointer"
                 >
                   Clear all filters
                 </button>
@@ -728,14 +728,14 @@ export default function BrowseClient({ venuesData }: Props) {
                 <button
                   onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                   disabled={currentPage === 1}
-                  className="w-10 h-10 rounded-[12px] border border-[rgba(74,95,127,0.08)] bg-white flex items-center justify-center hover:bg-[#F7F9FC] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-10 h-10 rounded-[12px] border border-[rgba(74,95,127,0.08)] bg-white flex items-center justify-center hover:bg-[#f7f6fd] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  <ChevronLeft className="w-4 h-4 text-[#111827]" />
+                  <ChevronLeft className="w-4 h-4 text-[#26215c]" />
                 </button>
 
                 {getPageNumbers().map((page, idx) =>
                   typeof page === "string" ? (
-                    <span key={`dots-${idx}`} className="w-10 h-10 flex items-center justify-center text-[13px] text-[#6B7280]">
+                    <span key={`dots-${idx}`} className="w-10 h-10 flex items-center justify-center text-[13px] text-[#534ab7]">
                       ...
                     </span>
                   ) : (
@@ -744,8 +744,8 @@ export default function BrowseClient({ venuesData }: Props) {
                       onClick={() => setCurrentPage(page)}
                       className={`w-10 h-10 rounded-[12px] text-[13px] font-semibold flex items-center justify-center transition-colors cursor-pointer ${
                         currentPage === page
-                          ? "bg-[#4A5F7F] text-white shadow-[0_4px_12px_rgba(74,95,127,0.2)]"
-                          : "text-[#111827] bg-white hover:bg-[#F7F9FC] border border-[rgba(74,95,127,0.08)]"
+                          ? "bg-[#7f77dd] text-white shadow-[0_4px_12px_rgba(74,95,127,0.2)]"
+                          : "text-[#26215c] bg-white hover:bg-[#f7f6fd] border border-[rgba(74,95,127,0.08)]"
                       }`}
                     >
                       {page}
@@ -756,9 +756,9 @@ export default function BrowseClient({ venuesData }: Props) {
                 <button
                   onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                   disabled={currentPage === totalPages}
-                  className="w-10 h-10 rounded-[12px] border border-[rgba(74,95,127,0.08)] bg-white flex items-center justify-center hover:bg-[#F7F9FC] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+                  className="w-10 h-10 rounded-[12px] border border-[rgba(74,95,127,0.08)] bg-white flex items-center justify-center hover:bg-[#f7f6fd] transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  <ChevronRight className="w-4 h-4 text-[#111827]" />
+                  <ChevronRight className="w-4 h-4 text-[#26215c]" />
                 </button>
               </div>
             )}
@@ -767,9 +767,9 @@ export default function BrowseClient({ venuesData }: Props) {
 
       {/* Filters Sheet */}
       <Sheet open={filtersOpen} onOpenChange={setFiltersOpen}>
-        <SheetContent side="right" className="w-full sm:w-[400px] p-0 bg-[#FDFDFD]">
+        <SheetContent side="right" className="w-full sm:w-[400px] p-0 bg-[#f7f6fd]">
           <SheetHeader className="p-5 border-b border-[rgba(74,95,127,0.08)] bg-white">
-            <SheetTitle className="text-[18px] font-bold text-[#111827]">Filters</SheetTitle>
+            <SheetTitle className="text-[18px] font-bold text-[#26215c]">Filters</SheetTitle>
           </SheetHeader>
           <div className="p-5 overflow-y-auto h-[calc(100vh-140px)]">
             <FilterSidebar
@@ -786,7 +786,7 @@ export default function BrowseClient({ venuesData }: Props) {
           <div className="absolute bottom-0 left-0 right-0 p-5 bg-white border-t border-[rgba(74,95,127,0.08)]">
             <button 
               onClick={() => setFiltersOpen(false)}
-              className="w-full py-3.5 bg-[#111827] text-white rounded-[12px] font-semibold text-[15px] hover:bg-black transition-colors cursor-pointer shadow-md"
+              className="w-full py-3.5 bg-[#26215c] text-white rounded-[12px] font-semibold text-[15px] hover:bg-black transition-colors cursor-pointer shadow-md"
             >
               Show {filtered.length} venues
             </button>

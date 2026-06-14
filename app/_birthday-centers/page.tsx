@@ -22,10 +22,10 @@ function BirthdayCenterCard({ title, titleKa, image, ages, capacity, activities,
   const isGeorgian = language === "ka"
   
   return (
-    <Link href="/venues/4" className="group block w-full outline-none focus-visible:ring-2 focus-visible:ring-[#111111] rounded-[14px]">
+    <Link href="/venues/4" className="group block w-full outline-none focus-visible:ring-2 focus-visible:ring-[#26215c] rounded-[14px]">
       <div className="relative w-full rounded-[14px] overflow-hidden isolate">
         {/* Image Container */}
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#E7ECF3] rounded-[14px]">
+        <div className="relative aspect-[4/3] overflow-hidden bg-[#cecbf6] rounded-[14px]">
           <Image
             src={image}
             alt={title}
@@ -34,13 +34,13 @@ function BirthdayCenterCard({ title, titleKa, image, ages, capacity, activities,
           />
           {isPopular && (
             <div className="absolute top-3 left-3 z-10">
-              <span className="bg-white/90 backdrop-blur-md text-[#111111] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+              <span className="bg-white/90 backdrop-blur-md text-[#26215c] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
                 {isGeorgian ? "პოპულარული" : "Popular"}
               </span>
             </div>
           )}
           <div className="absolute top-3 right-3 z-10">
-            <div className="flex items-center gap-1 bg-white/90 backdrop-blur-md text-[#111111] px-2 py-1 rounded-md shadow-sm">
+            <div className="flex items-center gap-1 bg-white/90 backdrop-blur-md text-[#26215c] px-2 py-1 rounded-md shadow-sm">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span className="text-[10px] font-bold uppercase tracking-wider">Verified</span>
             </div>
@@ -50,18 +50,18 @@ function BirthdayCenterCard({ title, titleKa, image, ages, capacity, activities,
         {/* Card Content - Trust & Activities Focused */}
         <div className="pt-4 pb-2">
           <div className="flex items-start justify-between mb-1">
-            <h3 className="text-[17px] font-bold text-[#111111] leading-snug tracking-tight">
+            <h3 className="text-[17px] font-bold text-[#26215c] leading-snug tracking-tight">
               {isGeorgian ? titleKa : title}
             </h3>
           </div>
 
           {/* Key Specs */}
           <div className="flex flex-wrap gap-x-3 gap-y-1 mb-2">
-            <div className="flex items-center gap-1 text-[#6B7A90]">
+            <div className="flex items-center gap-1 text-[#534ab7]">
               <Baby className="w-3.5 h-3.5" />
               <span className="text-[13px] font-medium">Ages {ages}</span>
             </div>
-            <div className="flex items-center gap-1 text-[#6B7A90]">
+            <div className="flex items-center gap-1 text-[#534ab7]">
               <Users className="w-3.5 h-3.5" />
               <span className="text-[13px] font-medium">Up to {capacity}</span>
             </div>
@@ -69,7 +69,7 @@ function BirthdayCenterCard({ title, titleKa, image, ages, capacity, activities,
 
           {/* Activities List */}
           <div className="mt-1">
-            <p className="text-[12px] text-[#6B7A90] truncate">
+            <p className="text-[12px] text-[#534ab7] truncate">
               Includes: {(isGeorgian ? activitiesKa : activities).slice(0, 2).join(" • ")}
             </p>
           </div>
@@ -168,20 +168,20 @@ export default function BirthdayCentersPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#EEF3F8] flex flex-col">
+    <main className="min-h-screen bg-[#f7f6fd] flex flex-col">
       <Header />
       
       <div className="flex-1 pt-24 pb-20">
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#E7ECF3] text-[#111111] text-[13px] font-bold mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#cecbf6] text-[#26215c] text-[13px] font-bold mb-6">
             <PartyPopper className="w-4 h-4" />
             FESTIVO KIDS
           </div>
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#111111] tracking-tight max-w-3xl leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#26215c] tracking-tight max-w-3xl leading-[1.1]">
             {isGeorgian ? "იპოვეთ საუკეთესო სადღესასწაულო ცენტრი" : "Find the perfect birthday center for your child"}
           </h1>
-          <p className="mt-6 text-lg text-[#6B7A90] max-w-2xl">
+          <p className="mt-6 text-lg text-[#534ab7] max-w-2xl">
             {isGeorgian 
               ? "უსაფრთხო, მხიარული და ასაკზე მორგებული სივრცეები დაუვიწყარი დაბადების დღისთვის." 
               : "Safe, fun, and age-appropriate spaces designed for unforgettable kids parties."}
@@ -189,7 +189,7 @@ export default function BirthdayCentersPage() {
         </div>
 
         {/* Filter Chips */}
-        <div className="sticky top-20 z-30 bg-[#EEF3F8]/95 backdrop-blur-md pb-4 mb-10 pt-2 border-b border-[#E7ECF3]">
+        <div className="sticky top-20 z-30 bg-[#f7f6fd]/95 backdrop-blur-md pb-4 mb-10 pt-2 border-b border-[#cecbf6]">
           <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
             <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide py-2">
               {BIRTHDAY_FILTERS.map(chip => (
@@ -198,8 +198,8 @@ export default function BirthdayCentersPage() {
                   onClick={() => setActiveFilter(activeFilter === chip.label ? null : chip.label)}
                   className={`px-4 py-2 rounded-full border font-medium text-sm transition-colors flex-shrink-0 flex items-center gap-2 ${
                     activeFilter === chip.label
-                      ? "border-[#111111] bg-[#111111] text-white"
-                      : "border-[#E7ECF3] bg-white text-[#6B7A90] hover:border-[#111111]/30"
+                      ? "border-[#26215c] bg-[#26215c] text-white"
+                      : "border-[#cecbf6] bg-white text-[#534ab7] hover:border-[#26215c]/30"
                   }`}
                 >
                   <chip.icon className="w-4 h-4" />
@@ -208,7 +208,7 @@ export default function BirthdayCentersPage() {
               ))}
             </div>
             
-            <button className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-[#E7ECF3] bg-white text-[#111111] font-semibold text-sm hover:border-[#111111] transition-colors ml-4 flex-shrink-0 shadow-sm">
+            <button className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-[#cecbf6] bg-white text-[#26215c] font-semibold text-sm hover:border-[#26215c] transition-colors ml-4 flex-shrink-0 shadow-sm">
               <SlidersHorizontal className="w-4 h-4" />
               {isGeorgian ? "მეტი ფილტრი" : "More Filters"}
             </button>
@@ -221,7 +221,7 @@ export default function BirthdayCentersPage() {
           <section className="relative">
             <div className="flex items-end justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-bold text-[#111111]">
+                <h2 className="text-2xl font-bold text-[#26215c]">
                   {isGeorgian ? "ყველაზე მოთხოვნადი" : "Popular Birthday Centers"}
                 </h2>
               </div>
@@ -231,10 +231,10 @@ export default function BirthdayCentersPage() {
                 <button
                   onClick={() => scroll("left")}
                   disabled={!canScrollLeft}
-                  className={`w-10 h-10 rounded-full border border-[#E7ECF3] bg-white flex items-center justify-center transition-all cursor-pointer ${
+                  className={`w-10 h-10 rounded-full border border-[#cecbf6] bg-white flex items-center justify-center transition-all cursor-pointer ${
                     canScrollLeft
-                      ? "hover:bg-[#F8FAFC] hover:border-[#111111]/30 text-[#111111] shadow-sm"
-                      : "opacity-40 cursor-not-allowed text-[#6B7A90]"
+                      ? "hover:bg-[#f7f6fd] hover:border-[#26215c]/30 text-[#26215c] shadow-sm"
+                      : "opacity-40 cursor-not-allowed text-[#534ab7]"
                   }`}
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -242,10 +242,10 @@ export default function BirthdayCentersPage() {
                 <button
                   onClick={() => scroll("right")}
                   disabled={!canScrollRight}
-                  className={`w-10 h-10 rounded-full border border-[#E7ECF3] bg-white flex items-center justify-center transition-all cursor-pointer ${
+                  className={`w-10 h-10 rounded-full border border-[#cecbf6] bg-white flex items-center justify-center transition-all cursor-pointer ${
                     canScrollRight
-                      ? "hover:bg-[#F8FAFC] hover:border-[#111111]/30 text-[#111111] shadow-sm"
-                      : "opacity-40 cursor-not-allowed text-[#6B7A90]"
+                      ? "hover:bg-[#f7f6fd] hover:border-[#26215c]/30 text-[#26215c] shadow-sm"
+                      : "opacity-40 cursor-not-allowed text-[#534ab7]"
                   }`}
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -280,10 +280,10 @@ export default function BirthdayCentersPage() {
           {/* Best for Ages 3-5 */}
           <section>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#111111]">
+              <h2 className="text-2xl font-bold text-[#26215c]">
                 {isGeorgian ? "საუკეთესო 3-5 წლის ასაკისთვის" : "Best for Ages 3–5"}
               </h2>
-              <p className="text-[#6B7A90] mt-1 text-sm">
+              <p className="text-[#534ab7] mt-1 text-sm">
                 {isGeorgian ? "უსაფრთხო და რბილი სათამაშო ზონები პატარებისთვის" : "Safe, soft play areas perfect for toddlers"}
               </p>
             </div>
@@ -297,10 +297,10 @@ export default function BirthdayCentersPage() {
           {/* Best for Ages 6-10 */}
           <section>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#111111]">
+              <h2 className="text-2xl font-bold text-[#26215c]">
                 {isGeorgian ? "საუკეთესო 6-10 წლის ასაკისთვის" : "Best for Ages 6–10"}
               </h2>
-              <p className="text-[#6B7A90] mt-1 text-sm">
+              <p className="text-[#534ab7] mt-1 text-sm">
                 {isGeorgian ? "აქტიური თამაშები და თავგადასავლები" : "Active play and adventures for older kids"}
               </p>
             </div>
@@ -314,7 +314,7 @@ export default function BirthdayCentersPage() {
           {/* All Centers */}
           <section>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#111111]">
+              <h2 className="text-2xl font-bold text-[#26215c]">
                 {isGeorgian ? "ყველა ცენტრი" : "All Centers"}
               </h2>
             </div>
@@ -327,7 +327,7 @@ export default function BirthdayCentersPage() {
               ))}
             </div>
             <div className="mt-12 flex justify-center">
-              <button className="px-8 py-3 rounded-xl border border-[#111111] text-[#111111] font-bold hover:bg-[#111111] hover:text-white transition-colors">
+              <button className="px-8 py-3 rounded-xl border border-[#26215c] text-[#26215c] font-bold hover:bg-[#26215c] hover:text-white transition-colors">
                 {isGeorgian ? "მეტის ჩატვირთვა" : "Load more"}
               </button>
             </div>

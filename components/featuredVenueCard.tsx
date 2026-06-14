@@ -75,7 +75,7 @@ export function FeaturedVenueCard({
       className={`group relative aspect-[3/2] overflow-hidden flex flex-col justify-between cursor-pointer isolate transition-shadow duration-300 ease-out ${!isHousesCard ? `rounded-[14px] shadow-[0_4px_20px_rgba(107,122,144,0.08)] hover:shadow-[0_16px_48px_rgba(107,122,144,0.16)] ${variant === "compact" ? "p-4 md:p-5" : "p-6 md:p-8"}` : ''} ${className}`}
     >
       {imageLoading ? (
-        <div className={`absolute -z-20 bg-[#eaeaea] animate-pulse ${isHousesCard ? 'inset-[8px] rounded-[8px]' : 'inset-0'}`} />
+        <div className={`absolute -z-20 bg-[#cecbf6] animate-pulse ${isHousesCard ? 'inset-[8px] rounded-[8px]' : 'inset-0'}`} />
       ) : (
         <div
           className={`absolute -z-20 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105 ${isHousesCard ? 'inset-[8px] rounded-[8px]' : 'inset-0'}`}

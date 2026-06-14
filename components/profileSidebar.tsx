@@ -30,12 +30,12 @@ export function ProfileSidebar() {
 
   return (
     <aside className="w-full flex flex-col gap-2 sticky top-32">
-      <div className="p-6 rounded-[14px] bg-white border border-[#E7ECF3] shadow-sm mb-4">
-        <h2 className="text-xl font-black text-[#111111] mb-1">Dashboard</h2>
-        <p className="text-sm font-medium text-[#6B7A90]">Manage your account</p>
+      <div className="p-6 rounded-[14px] bg-white border border-[#cecbf6] shadow-sm mb-4">
+        <h2 className="text-xl font-black text-[#26215c] mb-1">Dashboard</h2>
+        <p className="text-sm font-medium text-[#534ab7]">Manage your account</p>
       </div>
       
-      <nav className="flex flex-col gap-1 bg-white p-3 rounded-[14px] border border-[#E7ECF3] shadow-sm">
+      <nav className="flex flex-col gap-1 bg-white p-3 rounded-[14px] border border-[#cecbf6] shadow-sm">
         {navItems.map((item) => {
           const isActive = pathname === item.href
           const Icon = item.icon
@@ -45,11 +45,11 @@ export function ProfileSidebar() {
               href={item.href}
               className={`flex items-center gap-3 px-4 py-3 rounded-[10px] transition-all duration-200 font-bold text-[14px] ${
                 isActive 
-                  ? "bg-[#111111] text-white shadow-md" 
-                  : "text-[#6B7A90] hover:bg-[#F8FAFC] hover:text-[#111111]"
+                  ? "bg-[#26215c] text-white shadow-md" 
+                  : "text-[#534ab7] hover:bg-[#f7f6fd] hover:text-[#26215c]"
               }`}
             >
-              <Icon className={`w-[18px] h-[18px] ${isActive ? "text-white" : "text-[#6B7A90]"}`} />
+              <Icon className={`w-[18px] h-[18px] ${isActive ? "text-white" : "text-[#534ab7]"}`} />
               {item.name}
             </Link>
           )

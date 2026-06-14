@@ -18,9 +18,9 @@ import {
 function ProgressBar({ step, total }: { step: number; total: number }) {
   const pct = step === 0 ? 0 : (step / total) * 100
   return (
-    <div className="h-1 w-full bg-[#E7ECF3] rounded-full overflow-hidden">
+    <div className="h-1 w-full bg-[#cecbf6] rounded-full overflow-hidden">
       <motion.div
-        className="h-full bg-[#111111] rounded-full"
+        className="h-full bg-[#26215c] rounded-full"
         initial={{ width: 0 }}
         animate={{ width: `${pct}%` }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -31,7 +31,7 @@ function ProgressBar({ step, total }: { step: number; total: number }) {
 
 function LeftPanel() {
   return (
-    <div className="hidden lg:block w-full h-full relative overflow-hidden bg-[#F5F7FB]">
+    <div className="hidden lg:block w-full h-full relative overflow-hidden bg-[#f7f6fd]">
       {/* The image now fills the left panel and sticks to the top/bottom/left */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -113,8 +113,8 @@ function Content() {
   // Loading
   if (limitLoading) {
     return (
-      <div className="min-h-screen bg-[#F5F7FB] flex items-center justify-center">
-        <div className="w-8 h-8 rounded-full border-3 border-[#E7ECF3] border-t-[#111111] animate-spin" />
+      <div className="min-h-screen bg-[#f7f6fd] flex items-center justify-center">
+        <div className="w-8 h-8 rounded-full border-3 border-[#cecbf6] border-t-[#26215c] animate-spin" />
       </div>
     )
   }
@@ -122,16 +122,16 @@ function Content() {
   // Limit reached
   if (venueCount >= 3) {
     return (
-      <main className="min-h-screen bg-[#F5F7FB] flex items-center justify-center p-6">
+      <main className="min-h-screen bg-[#f7f6fd] flex items-center justify-center p-6">
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-          className="max-w-[440px] w-full bg-white rounded-[24px] p-10 text-center shadow-sm border border-[#E7ECF3]">
-          <h2 className="text-2xl font-semibold text-[#111111] tracking-tight mb-3">Limit Reached</h2>
-          <p className="text-[14px] text-[#6B7A90] mb-8 leading-relaxed">You have 3 active pending requests. Manage your existing listings before adding new ones.</p>
+          className="max-w-[440px] w-full bg-white rounded-[24px] p-10 text-center shadow-sm border border-[#cecbf6]">
+          <h2 className="text-2xl font-semibold text-[#26215c] tracking-tight mb-3">Limit Reached</h2>
+          <p className="text-[14px] text-[#534ab7] mb-8 leading-relaxed">You have 3 active pending requests. Manage your existing listings before adding new ones.</p>
           <div className="flex flex-col gap-3">
-            <Link href="/profile/venue-upload-requests" className="py-3.5 px-8 rounded-xl bg-[#111111] text-white font-medium text-[14px] hover:bg-black transition-colors text-center">
+            <Link href="/profile/venue-upload-requests" className="py-3.5 px-8 rounded-xl bg-[#26215c] text-white font-medium text-[14px] hover:bg-black transition-colors text-center">
               Manage Requests
             </Link>
-            <Link href="/" className="py-3.5 px-8 rounded-xl text-[#111111] font-medium text-[14px] border border-[#E7ECF3] hover:bg-[#F5F7FB] transition-colors text-center">
+            <Link href="/" className="py-3.5 px-8 rounded-xl text-[#26215c] font-medium text-[14px] border border-[#cecbf6] hover:bg-[#f7f6fd] transition-colors text-center">
               Back to Home
             </Link>
           </div>
@@ -148,17 +148,17 @@ function Content() {
       case 0: return (
         <motion.div key="intro" {...anim} className="flex flex-col items-center justify-center h-full text-center px-4">
           <div className="max-w-[480px] w-full">
-            <h1 className="text-[2.5rem] md:text-[3.2rem] font-semibold text-[#111111] tracking-tight leading-[1.1] mb-4">
+            <h1 className="text-[2.5rem] md:text-[3.2rem] font-semibold text-[#26215c] tracking-tight leading-[1.1] mb-4">
               List your space<br />in <span className="italic font-serif font-light">minutes</span>
             </h1>
-            <p className="text-[16px] text-[#6B7A90] leading-relaxed mb-10 max-w-[380px] mx-auto">
+            <p className="text-[16px] text-[#534ab7] leading-relaxed mb-10 max-w-[380px] mx-auto">
               Join Georgia's most exclusive community of event spaces and start reaching thousands of guests.
             </p>
             <button onClick={() => setCurrentStep(1)}
-              className="w-full max-w-[320px] py-4 px-8 rounded-xl bg-[#111111] text-[#FFFFFF] font-medium text-[16px] hover:bg-black active:scale-[0.98] transition-all cursor-pointer shadow-sm flex items-center justify-center gap-2 mx-auto">
+              className="w-full max-w-[320px] py-4 px-8 rounded-xl bg-[#26215c] text-[#FFFFFF] font-medium text-[16px] hover:bg-black active:scale-[0.98] transition-all cursor-pointer shadow-sm flex items-center justify-center gap-2 mx-auto">
               Get Started <ArrowRight className="w-4 h-4" />
             </button>
-            <Link href="/" className="block mt-6 text-[14px] text-[#6B7A90] hover:text-[#111111] transition-colors font-medium">
+            <Link href="/" className="block mt-6 text-[14px] text-[#534ab7] hover:text-[#26215c] transition-colors font-medium">
               ← Back to home
             </Link>
           </div>
@@ -169,7 +169,7 @@ function Content() {
           <StepHeader title="The Basics" sub="Name your space and pick a category" />
           <InputField label="Space Name" placeholder="e.g. Skyline Penthouse" required value={formData.spaceName} onChange={e => updateForm("spaceName", e.target.value)} />
           <div className="space-y-3">
-            <label className="text-[13px] font-medium text-[#111111]">Category</label>
+            <label className="text-[13px] font-medium text-[#26215c]">Category</label>
             <PillSelect items={CATEGORIES} selected={formData.category} onSelect={id => updateForm("category", id)} />
           </div>
           <TextareaField label="Description" placeholder="Tell us about your space, what makes it special..." rows={4} value={formData.description} onChange={e => updateForm("description", e.target.value)} />
@@ -180,7 +180,7 @@ function Content() {
           <StepHeader title="Location" sub="Help guests find your venue" />
           <div className="grid grid-cols-1 gap-6">
             <div className="space-y-3">
-              <label className="text-[13px] font-medium text-[#111111]">City</label>
+              <label className="text-[13px] font-medium text-[#26215c]">City</label>
               <PillSelect items={CITIES} selected={formData.city} onSelect={id => updateForm("city", id)} />
             </div>
             <InputField label="District / Neighborhood" placeholder="e.g. Vake" value={formData.district} onChange={e => updateForm("district", e.target.value)} />
@@ -205,7 +205,7 @@ function Content() {
             <InputField label="Min Duration (hrs)" type="number" placeholder="e.g. 2" required value={formData.minDuration} onChange={e => updateForm("minDuration", e.target.value)} />
           </div>
           <div className="space-y-3">
-            <label className="text-[13px] font-medium text-[#111111]">Amenities</label>
+            <label className="text-[13px] font-medium text-[#26215c]">Amenities</label>
             <PillSelect items={AMENITIES} selected={formData.amenities} onSelect={id => updateForm("amenities", formData.amenities.includes(id) ? formData.amenities.filter(x => x !== id) : [...formData.amenities, id])} multi />
           </div>
         </motion.div>
@@ -215,7 +215,7 @@ function Content() {
           <StepHeader title="Availability" sub="Select the dates your space is available" />
           <AvailabilityCalendar selectedDates={formData.availableDates} onChange={dates => updateForm("availableDates", dates)} />
           {formData.availableDates.length > 0 && (
-            <p className="text-[14px] text-[#6B7A90] font-medium">{formData.availableDates.length} date{formData.availableDates.length > 1 ? "s" : ""} selected</p>
+            <p className="text-[14px] text-[#534ab7] font-medium">{formData.availableDates.length} date{formData.availableDates.length > 1 ? "s" : ""} selected</p>
           )}
         </motion.div>
       )
@@ -224,15 +224,15 @@ function Content() {
           <StepHeader title="Almost Done" sub="Add your contact info and submit" />
           <InputField label="Phone Number" placeholder="+995 ..." required value={formData.contactPhone} onChange={e => updateForm("contactPhone", e.target.value)} />
           <InputField label="Email" type="email" placeholder="you@example.com" required value={formData.contactEmail} onChange={e => updateForm("contactEmail", e.target.value)} />
-          <div className="p-6 rounded-[16px] bg-[#F5F7FB] border border-[#E7ECF3]">
-            <h4 className="text-[14px] font-semibold text-[#111111] mb-4">Review Summary</h4>
-            <div className="space-y-3 text-[14px] text-[#6B7A90]">
-              <div className="flex justify-between"><span>Space</span><span className="font-medium text-[#111111]">{formData.spaceName || "—"}</span></div>
-              <div className="flex justify-between"><span>Category</span><span className="font-medium text-[#111111] capitalize">{formData.category}</span></div>
-              <div className="flex justify-between"><span>Location</span><span className="font-medium text-[#111111] capitalize">{formData.city}{formData.district ? `, ${formData.district}` : ""}</span></div>
-              <div className="flex justify-between"><span>Rate</span><span className="font-medium text-[#111111]">{formData.price ? `₾${formData.price}/hr` : "—"}</span></div>
-              <div className="flex justify-between"><span>Photos</span><span className="font-medium text-[#111111]">{formData.images.length}</span></div>
-              <div className="flex justify-between"><span>Dates</span><span className="font-medium text-[#111111]">{formData.availableDates.length}</span></div>
+          <div className="p-6 rounded-[16px] bg-[#f7f6fd] border border-[#cecbf6]">
+            <h4 className="text-[14px] font-semibold text-[#26215c] mb-4">Review Summary</h4>
+            <div className="space-y-3 text-[14px] text-[#534ab7]">
+              <div className="flex justify-between"><span>Space</span><span className="font-medium text-[#26215c]">{formData.spaceName || "—"}</span></div>
+              <div className="flex justify-between"><span>Category</span><span className="font-medium text-[#26215c] capitalize">{formData.category}</span></div>
+              <div className="flex justify-between"><span>Location</span><span className="font-medium text-[#26215c] capitalize">{formData.city}{formData.district ? `, ${formData.district}` : ""}</span></div>
+              <div className="flex justify-between"><span>Rate</span><span className="font-medium text-[#26215c]">{formData.price ? `₾${formData.price}/hr` : "—"}</span></div>
+              <div className="flex justify-between"><span>Photos</span><span className="font-medium text-[#26215c]">{formData.images.length}</span></div>
+              <div className="flex justify-between"><span>Dates</span><span className="font-medium text-[#26215c]">{formData.availableDates.length}</span></div>
             </div>
           </div>
         </motion.div>
@@ -244,21 +244,21 @@ function Content() {
   // Success
   if (submitStatus === "success") {
     return (
-      <main className="min-h-screen bg-[#F5F7FB] flex items-center justify-center p-6">
+      <main className="min-h-screen bg-[#f7f6fd] flex items-center justify-center p-6">
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
-          className="max-w-[440px] w-full bg-white rounded-[24px] p-10 text-center shadow-sm border border-[#E7ECF3]">
-          <div className="w-16 h-16 rounded-full bg-[#F5F7FB] flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 className="w-8 h-8 text-[#111111]" />
+          className="max-w-[440px] w-full bg-white rounded-[24px] p-10 text-center shadow-sm border border-[#cecbf6]">
+          <div className="w-16 h-16 rounded-full bg-[#f7f6fd] flex items-center justify-center mx-auto mb-6">
+            <CheckCircle2 className="w-8 h-8 text-[#26215c]" />
           </div>
-          <h2 className="text-2xl font-semibold text-[#111111] tracking-tight mb-3">Request Sent!</h2>
-          <p className="text-[14px] text-[#6B7A90] mb-8 leading-relaxed max-w-[300px] mx-auto">
+          <h2 className="text-2xl font-semibold text-[#26215c] tracking-tight mb-3">Request Sent!</h2>
+          <p className="text-[14px] text-[#534ab7] mb-8 leading-relaxed max-w-[300px] mx-auto">
             Our team will review your listing and notify you once it's approved.
           </p>
           <div className="flex flex-col gap-3">
-            <Link href="/profile/venue-upload-requests" className="py-3.5 px-8 rounded-xl bg-[#111111] text-white font-medium text-[14px] hover:bg-black transition-colors text-center">
+            <Link href="/profile/venue-upload-requests" className="py-3.5 px-8 rounded-xl bg-[#26215c] text-white font-medium text-[14px] hover:bg-black transition-colors text-center">
               View My Requests
             </Link>
-            <Link href="/" className="py-3.5 px-8 rounded-xl text-[#111111] font-medium text-[14px] border border-[#E7ECF3] hover:bg-[#F5F7FB] transition-colors text-center">
+            <Link href="/" className="py-3.5 px-8 rounded-xl text-[#26215c] font-medium text-[14px] border border-[#cecbf6] hover:bg-[#f7f6fd] transition-colors text-center">
               Back to Home
             </Link>
           </div>
@@ -270,7 +270,7 @@ function Content() {
   return (
     <main className="min-h-screen bg-[#FFFFFF] flex">
       {/* Left Panel - Fixed full height, top left */}
-      <div className="hidden lg:block w-[40%] xl:w-[45%] h-screen sticky top-0 left-0 bg-[#F5F7FB] flex-shrink-0">
+      <div className="hidden lg:block w-[40%] xl:w-[45%] h-screen sticky top-0 left-0 bg-[#f7f6fd] flex-shrink-0">
         <LeftPanel />
       </div>
 
@@ -280,9 +280,9 @@ function Content() {
         <div className="max-w-[560px] w-full mx-auto">
           {/* Mobile header */}
           <div className="lg:hidden flex items-center justify-between mb-8">
-            <Link href="/" className="text-[#111111] text-lg font-semibold tracking-tight">FESTIVO</Link>
+            <Link href="/" className="text-[#26215c] text-lg font-semibold tracking-tight">FESTIVO</Link>
             {currentStep > 0 && (
-              <span className="text-[13px] font-medium text-[#6B7A90]">Step {currentStep} of {totalSteps}</span>
+              <span className="text-[13px] font-medium text-[#534ab7]">Step {currentStep} of {totalSteps}</span>
             )}
           </div>
 
@@ -300,11 +300,11 @@ function Content() {
           {currentStep > 0 && (
             <div className="mt-10 flex items-center gap-4">
               <button onClick={handleBack}
-                className="py-4 px-6 rounded-xl text-[#111111] font-medium text-[15px] border border-[#E7ECF3] hover:bg-[#F5F7FB] transition-all cursor-pointer flex items-center gap-2">
+                className="py-4 px-6 rounded-xl text-[#26215c] font-medium text-[15px] border border-[#cecbf6] hover:bg-[#f7f6fd] transition-all cursor-pointer flex items-center gap-2">
                 <ArrowLeft className="w-4 h-4" /> Back
               </button>
               <button onClick={currentStep === totalSteps ? handleSubmit : handleNext} disabled={isSubmitting}
-                className="flex-1 py-4 px-6 rounded-xl bg-[#111111] text-[#FFFFFF] font-medium text-[15px] hover:bg-black active:scale-[0.99] transition-all disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2">
+                className="flex-1 py-4 px-6 rounded-xl bg-[#26215c] text-[#FFFFFF] font-medium text-[15px] hover:bg-black active:scale-[0.99] transition-all disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2">
                 {isSubmitting ? "Submitting..." : currentStep === totalSteps ? "Submit for Review" : "Continue"}
                 {!isSubmitting && currentStep < totalSteps && <ArrowRight className="w-4 h-4" />}
               </button>
@@ -325,8 +325,8 @@ function Content() {
 function StepHeader({ title, sub }: { title: string; sub: string }) {
   return (
     <div className="mb-4">
-      <h2 className="text-[1.75rem] font-semibold text-[#111111] tracking-tight leading-tight">{title}</h2>
-      <p className="text-[15px] text-[#6B7A90] mt-2">{sub}</p>
+      <h2 className="text-[1.75rem] font-semibold text-[#26215c] tracking-tight leading-tight">{title}</h2>
+      <p className="text-[15px] text-[#534ab7] mt-2">{sub}</p>
     </div>
   )
 }

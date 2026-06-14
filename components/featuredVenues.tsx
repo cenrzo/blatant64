@@ -45,7 +45,7 @@ function CardImage({ venue, resolveLabel }: { venue: Venue; resolveLabel: (k: st
     return () => { m = false }
   }, [venue.image])
   const name = resolveLabel(venue.nameKey)
-  if (loading) return <div className="w-full h-full bg-[#eaeaea] animate-pulse" />
+  if (loading) return <div className="w-full h-full bg-[#cecbf6] animate-pulse" />
   return <Image src={src || "/images/venues/default.jpg"} alt={name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 600px" />
 }
 
@@ -63,7 +63,7 @@ function VenueCard({
         <div className="w-full h-full absolute inset-0">
           <CardImage venue={venue} resolveLabel={resolveLabel} />
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-black/20 to-transparent opacity-75 transition-opacity duration-700 group-hover:opacity-40 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#26215c] via-black/20 to-transparent opacity-75 transition-opacity duration-700 group-hover:opacity-40 pointer-events-none" />
 
           {/* Rating pill — top left */}
           <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white px-2.5 py-1.5 rounded-[4px] flex items-center gap-1.5">
@@ -211,18 +211,18 @@ export function FeaturedVenues() {
                       <div className="ps-card__img" style={{ aspectRatio: "4/3", height: "auto" }}>
                         <CardImage venue={v} resolveLabel={resolveLabel} />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
-                        <div className="absolute top-3 left-3 bg-[#1a1a1c]/65 backdrop-blur-md text-white px-2 py-1 rounded-full flex items-center gap-1">
+                        <div className="absolute top-3 left-3 bg-[#26215c]/65 backdrop-blur-md text-white px-2 py-1 rounded-full flex items-center gap-1">
                           <Star className="w-2.5 h-2.5 fill-white" /><span className="text-[11px] font-semibold">{v.rating}</span>
                         </div>
                       </div>
                       <div className="ps-card__body">
-                        <h3 className="text-[1.1rem] font-bold text-[#1a1a1c] mb-0.5">{resolveLabel(v.nameKey)}</h3>
-                        <div className="flex items-center gap-1 text-[#1a1a1c]/35 text-[0.75rem] font-medium">
+                        <h3 className="text-[1.1rem] font-bold text-[#26215c] mb-0.5">{resolveLabel(v.nameKey)}</h3>
+                        <div className="flex items-center gap-1 text-[#26215c]/35 text-[0.75rem] font-medium">
                           <MapPin className="w-3 h-3" /><span>{resolveLabel(v.locationKey)}</span>
                         </div>
                         <div className="flex items-baseline gap-1 mt-3">
-                          <span className="text-[1.3rem] font-bold text-[#1a1a1c]">${v.price}</span>
-                          <span className="text-[0.6rem] font-bold text-[#1a1a1c]/25 uppercase tracking-widest">/night</span>
+                          <span className="text-[1.3rem] font-bold text-[#26215c]">${v.price}</span>
+                          <span className="text-[0.6rem] font-bold text-[#26215c]/25 uppercase tracking-widest">/night</span>
                         </div>
                       </div>
                     </div>
@@ -234,7 +234,7 @@ export function FeaturedVenues() {
             {/* Mobile dots */}
             <div className="flex justify-center gap-2 mt-1">
               {allVenues.map((_, i) => (
-                <span key={i} className={`h-1 rounded-full transition-all duration-300 ${i === mobileIdx ? "w-8 bg-[#1a1a1c]" : "w-2 bg-[#1a1a1c]/15"}`} />
+                <span key={i} className={`h-1 rounded-full transition-all duration-300 ${i === mobileIdx ? "w-8 bg-[#26215c]" : "w-2 bg-[#26215c]/15"}`} />
               ))}
             </div>
 
@@ -292,7 +292,7 @@ export function FeaturedVenues() {
             {/* Dashed slider indicator under the featured card explicitly */}
             <div className="flex items-center justify-center gap-3 mt-6 w-full lg:w-[60%]">
               {[...Array(totalPages)].map((_, i) => (
-                <span key={i} className={`h-1 rounded-full transition-all duration-300 ${i === page ? "w-8 bg-[#1a1a1c]" : "w-6 bg-[#1a1a1c]/10"}`} />
+                <span key={i} className={`h-1 rounded-full transition-all duration-300 ${i === page ? "w-8 bg-[#26215c]" : "w-6 bg-[#26215c]/10"}`} />
               ))}
             </div>
           </div>
@@ -306,7 +306,7 @@ export function FeaturedVenues() {
               </div>
 
               {/* Heading */}
-              <h2 className="font-bold text-[3.5rem] lg:text-[2.6rem] xl:text-[5.5rem] leading-[0.95] tracking-tighter text-[#1a1a1c] lg:mb-1.5 xl:mb-6">
+              <h2 className="font-bold text-[3.5rem] lg:text-[2.6rem] xl:text-[5.5rem] leading-[0.95] tracking-tighter text-[#26215c] lg:mb-1.5 xl:mb-6">
                 Popular<br/>Venues
               </h2>
               
@@ -323,8 +323,8 @@ export function FeaturedVenues() {
               </div>
 
               {/* CTA */}
-              <Link href="/browse" className="inline-flex items-center gap-2 text-[#1a1a1c] font-bold text-[1.05rem] lg:text-[0.85rem] xl:text-[1.1rem] group lg:mb-3 xl:mb-12">
-                <span className="border-b-[1.5px] border-[#1a1a1c] pb-0.5">Explore all venues</span>
+              <Link href="/browse" className="inline-flex items-center gap-2 text-[#26215c] font-bold text-[1.05rem] lg:text-[0.85rem] xl:text-[1.1rem] group lg:mb-3 xl:mb-12">
+                <span className="border-b-[1.5px] border-[#26215c] pb-0.5">Explore all venues</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </ScrollReveal>
@@ -343,7 +343,7 @@ export function FeaturedVenues() {
               <div className="w-px h-[10px] bg-black/10" />
 
               <div className="flex items-center gap-1.5 text-[10px] font-bold tracking-[0.2em] select-none">
-                <span className="text-[#1a1a1c]">{String(page + 1).padStart(2, "0")}</span>
+                <span className="text-[#26215c]">{String(page + 1).padStart(2, "0")}</span>
                 <span className="text-black/20">/</span>
                 <span className="text-black/40">{String(totalPages).padStart(2, "0")}</span>
               </div>
@@ -355,19 +355,19 @@ export function FeaturedVenues() {
         {/* Bottom Statements Row */}
         <div className="hidden lg:grid grid-cols-3 max-w-[1100px] mx-auto mt-16 pt-8 border-t border-black/5 relative z-10 text-center gap-8 group cursor-default">
           <div className="relative px-4 transition-transform duration-[220ms] ease-out group-hover:translate-x-[2px]">
-            <p className="text-[1rem] font-medium text-[#1a1a1c] opacity-40 group-hover:opacity-90 transition-opacity duration-[220ms] ease-out leading-relaxed">
+            <p className="text-[1rem] font-medium text-[#26215c] opacity-40 group-hover:opacity-90 transition-opacity duration-[220ms] ease-out leading-relaxed">
               Handpicked venues<br/>across Georgia.
             </p>
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[1px] h-12 bg-[#1a1a1c] opacity-[0.05] group-hover:opacity-[0.15] transition-opacity duration-[220ms] ease-out" />
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[1px] h-12 bg-[#26215c] opacity-[0.05] group-hover:opacity-[0.15] transition-opacity duration-[220ms] ease-out" />
           </div>
           <div className="relative px-4 transition-transform duration-[220ms] ease-out group-hover:translate-x-[2px]">
-            <p className="text-[1rem] font-medium text-[#1a1a1c] opacity-40 group-hover:opacity-90 transition-opacity duration-[220ms] ease-out leading-relaxed">
+            <p className="text-[1rem] font-medium text-[#26215c] opacity-40 group-hover:opacity-90 transition-opacity duration-[220ms] ease-out leading-relaxed">
               Verified hosts and<br/>premium spaces.
             </p>
-            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[1px] h-12 bg-[#1a1a1c] opacity-[0.05] group-hover:opacity-[0.15] transition-opacity duration-[220ms] ease-out" />
+            <div className="absolute top-1/2 -translate-y-1/2 right-0 w-[1px] h-12 bg-[#26215c] opacity-[0.05] group-hover:opacity-[0.15] transition-opacity duration-[220ms] ease-out" />
           </div>
           <div className="px-4 transition-transform duration-[220ms] ease-out group-hover:translate-x-[2px]">
-            <p className="text-[1rem] font-medium text-[#1a1a1c] opacity-40 group-hover:opacity-90 transition-opacity duration-[220ms] ease-out leading-relaxed">
+            <p className="text-[1rem] font-medium text-[#26215c] opacity-40 group-hover:opacity-90 transition-opacity duration-[220ms] ease-out leading-relaxed">
               Instant booking for<br/>selected properties.
             </p>
           </div>

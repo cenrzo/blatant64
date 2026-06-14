@@ -6,8 +6,8 @@ export default function Loading() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center pointer-events-none">
       <div className="flex flex-col items-center gap-4 p-8">
-        <Loader2 className="w-10 h-10 animate-spin text-[#556457]" />
-        <p className="text-sm font-semibold tracking-wider text-[#6B7A90] uppercase opacity-80">Loading...</p>
+        <Loader2 className="w-10 h-10 animate-spin text-[#26215c]" />
+        <p className="text-sm font-semibold tracking-wider text-[#534ab7] uppercase opacity-80">Loading...</p>
       </div>
     </div>
   )

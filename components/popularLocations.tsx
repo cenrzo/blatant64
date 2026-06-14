@@ -48,12 +48,12 @@ export function PopularLocations() {
     <section className="w-full max-w-[1400px] mx-auto px-6 md:px-12 py-8 md:py-10 relative z-[1]">
       {/* Section Header */}
       <div className="flex items-end justify-between mb-6 md:mb-8">
-        <h2 className="text-[#1a1a1c] text-[22px] md:text-[26px] font-bold tracking-tight">
+        <h2 className="text-[#26215c] text-[22px] md:text-[26px] font-bold tracking-tight">
           {isGeorgian ? "პოპულარული ლოკაციები" : "Popular locations"}
         </h2>
         <Link
           href="/browse"
-          className="group flex items-center gap-2 text-[13px] font-semibold text-[#1a1a1c] hover:opacity-70 transition-opacity"
+          className="group flex items-center gap-2 text-[13px] font-semibold text-[#26215c] hover:opacity-70 transition-opacity"
         >
           {isGeorgian ? "ყველა ლოკაცია" : "View all"}
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />

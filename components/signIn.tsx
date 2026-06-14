@@ -39,24 +39,24 @@ export function SignIn({ onClose, onSignUp }: SignInProps) {
     <div className="w-full max-w-md">
       <div className="space-y-8">
         <div className="space-y-2">
-          <h1 className="text-4xl font-extrabold text-[#111111]">Welcome Back</h1>
-          <p className="text-center text-[#6B7A90]">Sign in to your FESTIVO account</p>
+          <h1 className="text-4xl font-extrabold text-[#26215c]">Welcome Back</h1>
+          <p className="text-center text-[#534ab7]">Sign in to your FESTIVO account</p>
         </div>
 
         <form onSubmit={handleSignIn} className="space-y-6">
           <div className="space-y-3">
-            <label htmlFor="email" className="block text-[#111111] font-semibold">
+            <label htmlFor="email" className="block text-[#26215c] font-semibold">
               Email
             </label>
             <div className="relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6B7A90]" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#534ab7]" />
               <input
                 type="email"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full pl-12 pr-4 py-3 rounded-[12px] border border-[#E7ECF3] bg-[#F5F7FB] text-[#111111] placeholder-[#6B7A90] focus:outline-none focus:ring-1 focus:ring-[#111111] transition-[box-shadow,border-color,background-color] duration-300"
+                className="w-full pl-12 pr-4 py-3 rounded-[12px] border border-[#cecbf6] bg-[#f7f6fd] text-[#26215c] placeholder-[#534ab7] focus:outline-none focus:ring-1 focus:ring-[#26215c] transition-[box-shadow,border-color,background-color] duration-300"
                 disabled={loading}
                 required
               />
@@ -64,25 +64,25 @@ export function SignIn({ onClose, onSignUp }: SignInProps) {
           </div>
 
           <div className="space-y-3">
-            <label htmlFor="password" className="block text-[#111111] font-semibold">
+            <label htmlFor="password" className="block text-[#26215c] font-semibold">
               Password
             </label>
             <div className="relative">
-              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#6B7A90]" />
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#534ab7]" />
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-12 pr-12 py-3 rounded-[12px] border border-[#E7ECF3] bg-[#F5F7FB] text-[#111111] placeholder-[#6B7A90] focus:outline-none focus:ring-1 focus:ring-[#111111] transition-[box-shadow,border-color,background-color] duration-300"
+                className="w-full pl-12 pr-12 py-3 rounded-[12px] border border-[#cecbf6] bg-[#f7f6fd] text-[#26215c] placeholder-[#534ab7] focus:outline-none focus:ring-1 focus:ring-[#26215c] transition-[box-shadow,border-color,background-color] duration-300"
                 disabled={loading}
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#6B7A90] hover:text-[#111111] transition-colors text-sm"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#534ab7] hover:text-[#26215c] transition-colors text-sm"
               >
                 {showPassword ? "Hide" : "Show"}
               </button>
@@ -101,7 +101,7 @@ export function SignIn({ onClose, onSignUp }: SignInProps) {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 px-6 rounded-[12px] bg-[#111111] text-white font-bold cursor-pointer hover:bg-black transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3 px-6 rounded-[12px] bg-[#26215c] text-white font-bold cursor-pointer hover:bg-black transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>
@@ -110,17 +110,17 @@ export function SignIn({ onClose, onSignUp }: SignInProps) {
         <div className="space-y-3">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-[#E7ECF3]"></div>
+              <div className="w-full border-t border-[#cecbf6]"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-[#6B7A90]">Don't have an account?</span>
+              <span className="px-2 bg-white text-[#534ab7]">Don't have an account?</span>
             </div>
           </div>
 
           <button
             type="button"
             onClick={onSignUp}
-            className="w-full py-3 px-6 rounded-[12px] border border-[#E7ECF3] hover:bg-[#F5F7FB] text-[#111111] font-semibold cursor-pointer transition-colors duration-300"
+            className="w-full py-3 px-6 rounded-[12px] border border-[#cecbf6] hover:bg-[#f7f6fd] text-[#26215c] font-semibold cursor-pointer transition-colors duration-300"
           >
             Create an account
           </button>
@@ -129,7 +129,7 @@ export function SignIn({ onClose, onSignUp }: SignInProps) {
         {onClose && (
           <button
             onClick={onClose}
-            className="w-full py-3 px-6 rounded-[12px] bg-white border border-[#E7ECF3] text-[#111111] font-semibold cursor-pointer hover:bg-[#F5F7FB] transition-colors duration-300 flex items-center justify-center gap-2 group"
+            className="w-full py-3 px-6 rounded-[12px] bg-white border border-[#cecbf6] text-[#26215c] font-semibold cursor-pointer hover:bg-[#f7f6fd] transition-colors duration-300 flex items-center justify-center gap-2 group"
           >
             <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
             Back to Home

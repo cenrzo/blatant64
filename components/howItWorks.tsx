@@ -95,7 +95,7 @@ export function HowItWorks() {
       id="how-it-works"
       ref={sectionRef}
       className="relative py-36 px-6 lg:px-8 overflow-hidden"
-      style={{ backgroundColor: "#0B0B0F" }}
+      style={{ backgroundColor: "#26215c" }}
     >
       <div className="absolute inset-0 pointer-events-none">
         <svg
@@ -176,7 +176,7 @@ export function HowItWorks() {
                       opacity: shouldAnimateIcon(index) ? 1 : 0,
                     }}
                   />
-                  <step.icon className="relative z-10 w-10 h-10 text-[#007AFF]" strokeWidth={1.5} />
+                  <step.icon className="relative z-10 w-10 h-10 text-[#7f77dd]" strokeWidth={1.5} />
                 </div>
 
 

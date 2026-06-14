@@ -281,7 +281,7 @@ function BookingCard({ booking, showActions, isSent, processingId, onAction, onC
               ) : (
                 <button
                   onClick={() => setReviewingBooking(booking)}
-                  className="w-full py-4 px-6 rounded-xl bg-white dark:bg-[#1a1a1c] text-[#1a1a1c] dark:text-white border border-black/10 dark:border-white/10 font-bold text-sm hover:bg-black/5 dark:hover:bg-white/5 active:scale-[0.98] transition-all duration-300 flex items-center justify-center cursor-pointer"
+                  className="w-full py-4 px-6 rounded-xl bg-white dark:bg-[#26215c] text-[#26215c] dark:text-white border border-black/10 dark:border-white/10 font-bold text-sm hover:bg-black/5 dark:hover:bg-white/5 active:scale-[0.98] transition-all duration-300 flex items-center justify-center cursor-pointer"
                 >
                   Rate Your Experience
                 </button>
@@ -295,7 +295,7 @@ function BookingCard({ booking, showActions, isSent, processingId, onAction, onC
               <button
                 onClick={() => onPay(booking.id!)}
                 disabled={processingId === booking.id}
-                className="w-full py-4 px-6 rounded-xl bg-[#1a1a1c] dark:bg-white text-white dark:text-[#1a1a1c] font-bold text-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center cursor-pointer disabled:opacity-50"
+                className="w-full py-4 px-6 rounded-xl bg-[#26215c] dark:bg-white text-white dark:text-[#26215c] font-bold text-sm hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center cursor-pointer disabled:opacity-50"
               >
                 {processingId === booking.id ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
@@ -554,7 +554,7 @@ export default function RequestsDashboard() {
             {activeTab === "incoming" && (
               <Link 
                 href="/list-your-space" 
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#0a0f1e] text-white font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-black/10"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#26215c] text-white font-bold hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl shadow-black/10"
               >
                 <Plus className="w-5 h-5" />
                 List Your Space

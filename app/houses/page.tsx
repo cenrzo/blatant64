@@ -181,7 +181,7 @@ const FilterSidebar = memo(function FilterSidebar({
           <select
             value={selectedCategory}
             onChange={(e) => onCategoryChange(e.target.value)}
-            style={{ width: "100%", padding: "10px 12px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontSize: 13, outline: "none", color: "#111", background: "#fafafa", appearance: "none", cursor: "pointer" }}
+            style={{ width: "100%", padding: "10px 12px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontSize: 13, outline: "none", color: "#26215c", background: "#f7f6fd", appearance: "none", cursor: "pointer" }}
           >
             <option value="all">All Categories</option>
             <option value="Villas">Villas</option>
@@ -189,7 +189,7 @@ const FilterSidebar = memo(function FilterSidebar({
             <option value="Rooftops">Rooftops</option>
             <option value="Studios">Studios</option>
           </select>
-          <ChevronDown style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", width: 14, height: 14, color: "#888", pointerEvents: "none" }} />
+          <ChevronDown style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", width: 14, height: 14, color: "#afa9ec", pointerEvents: "none" }} />
         </div>
       </div>
 
@@ -200,7 +200,7 @@ const FilterSidebar = memo(function FilterSidebar({
           <select
             value={selectedCity}
             onChange={(e) => onCityChange(e.target.value)}
-            style={{ width: "100%", padding: "10px 12px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontSize: 13, outline: "none", color: "#111", background: "#fafafa", appearance: "none", cursor: "pointer" }}
+            style={{ width: "100%", padding: "10px 12px", border: "1px solid rgba(0,0,0,0.1)", borderRadius: 8, fontSize: 13, outline: "none", color: "#26215c", background: "#f7f6fd", appearance: "none", cursor: "pointer" }}
           >
             <option value="all">All Cities</option>
             <option value="Tbilisi">Tbilisi</option>
@@ -209,7 +209,7 @@ const FilterSidebar = memo(function FilterSidebar({
             <option value="Kazbegi">Kazbegi</option>
             <option value="Borjomi">Borjomi</option>
           </select>
-          <ChevronDown style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", width: 14, height: 14, color: "#888", pointerEvents: "none" }} />
+          <ChevronDown style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", width: 14, height: 14, color: "#afa9ec", pointerEvents: "none" }} />
         </div>
       </div>
 
@@ -328,10 +328,10 @@ function HousesListYourSpace() {
     <div className="houses-list-space-container">
       <div className="houses-list-space-card">
         <div style={{ flex: 1, padding: "56px 48px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <h2 style={{ fontSize: 36, fontWeight: 600, color: "#111111", marginBottom: 16, letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: 36, fontWeight: 600, color: "#26215c", marginBottom: 16, letterSpacing: "-0.02em", lineHeight: 1.1 }}>
             List your space <br/>with Festivo
           </h2>
-          <p style={{ fontSize: 16, color: "#6B6B6B", marginBottom: 32, lineHeight: 1.6, maxWidth: 380 }}>
+          <p style={{ fontSize: 16, color: "#534ab7", marginBottom: 32, lineHeight: 1.6, maxWidth: 380 }}>
             Reach thousands of guests looking for the perfect venue. Start earning today with our simple and secure platform.
           </p>
           <div>
@@ -342,7 +342,7 @@ function HousesListYourSpace() {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: 8,
-                  background: "#111111",
+                  background: "#26215c",
                   color: "#FFFFFF",
                   borderRadius: 14,
                   padding: "14px 28px",
@@ -352,11 +352,11 @@ function HousesListYourSpace() {
                   transition: "background-color 200ms ease, color 200ms ease",
                 }}
                 onMouseOver={(e) => {
-                  e.currentTarget.style.backgroundColor = "#556457"
+                  e.currentTarget.style.backgroundColor = "#26215c"
                   e.currentTarget.style.color = "#FFFFFF"
                 }}
                 onMouseOut={(e) => {
-                  e.currentTarget.style.backgroundColor = "#111111"
+                  e.currentTarget.style.backgroundColor = "#26215c"
                   e.currentTarget.style.color = "#FFFFFF"
                 }}
               >
@@ -512,7 +512,7 @@ export default function HousesPage() {
           </div>
 
           {error && (
-            <div style={{ padding: "10px 14px", marginBottom: 16, background: "#fef3cd", borderRadius: 8, fontSize: 13, color: "#856404" }}>
+            <div style={{ padding: "10px 14px", marginBottom: 16, background: "#faeeda", borderRadius: 8, fontSize: 13, color: "#633806" }}>
               {error}
             </div>
           )}
@@ -526,7 +526,7 @@ export default function HousesPage() {
               ))}
             </div>
           ) : (
-            <div style={{ textAlign: "center", padding: "60px 20px", color: "#888", fontSize: 15 }}>
+            <div style={{ textAlign: "center", padding: "60px 20px", color: "#afa9ec", fontSize: 15 }}>
               No properties match your filters. Try adjusting your criteria.
             </div>
           )}

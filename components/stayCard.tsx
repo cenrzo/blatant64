@@ -24,15 +24,15 @@ export function StayCard({ stay }: { stay: StayCardData }) {
   const getBadgeClasses = (badge?: string) => {
     switch (badge) {
       case "Villa":
-        return "bg-[#1a1a2e] text-white"
+        return "bg-[#26215c] text-white"
       case "Apartment":
-        return "bg-[#2d3748] text-white"
+        return "bg-[#26215c] text-white"
       case "Beachfront":
         return "bg-[#0d9488] text-white"
       case "Cabin":
-        return "bg-[#92400e] text-white"
+        return "bg-[#633806] text-white"
       default:
-        return "bg-[#1a1a2e] text-white"
+        return "bg-[#26215c] text-white"
     }
   }
 
@@ -40,7 +40,7 @@ export function StayCard({ stay }: { stay: StayCardData }) {
     <Link href={`/venues/${stay.id}`} className="group block w-full">
       <div className="relative w-full">
         {/* Image */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#f0f0f0]">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[#f7f6fd]">
           <Image
             src={stay.image}
             alt={stay.title}
@@ -69,7 +69,7 @@ export function StayCard({ stay }: { stay: StayCardData }) {
           >
             <Heart
               className={`w-4 h-4 transition-colors ${
-                isFavorited ? "fill-[#1a1a2e] text-[#1a1a2e]" : "text-[#1a1a2e] stroke-[1.5]"
+                isFavorited ? "fill-[#26215c] text-[#26215c]" : "text-[#26215c] stroke-[1.5]"
               }`}
             />
           </button>
@@ -79,28 +79,28 @@ export function StayCard({ stay }: { stay: StayCardData }) {
         <div className="pt-3 pb-1">
           {/* Title + Rating */}
           <div className="flex items-start justify-between gap-2 mb-0.5">
-            <h3 className="text-[14px] font-bold text-[#111827] leading-tight truncate">
+            <h3 className="text-[14px] font-bold text-[#26215c] leading-tight truncate">
               {stay.title}
             </h3>
             <div className="flex items-center gap-1 flex-shrink-0">
-              <Star className="w-3.5 h-3.5 fill-[#111827] text-[#111827]" />
-              <span className="text-[13px] font-bold text-[#111827]">{stay.rating.toFixed(2)}</span>
-              <span className="text-[13px] text-[#6b7280]">({stay.reviews})</span>
+              <Star className="w-3.5 h-3.5 fill-[#26215c] text-[#26215c]" />
+              <span className="text-[13px] font-bold text-[#26215c]">{stay.rating.toFixed(2)}</span>
+              <span className="text-[13px] text-[#534ab7]">({stay.reviews})</span>
             </div>
           </div>
 
           {/* Location */}
-          <p className="text-[13px] text-[#6b7280] mb-2">{stay.location}</p>
+          <p className="text-[13px] text-[#534ab7] mb-2">{stay.location}</p>
 
           {/* Bottom Rating row + Price */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1">
-              <Star className="w-3.5 h-3.5 text-[#9ca3af] stroke-[2]" />
-              <span className="text-[13px] text-[#6b7280]">{stay.rating.toFixed(2)}</span>
-              <span className="text-[13px] text-[#6b7280]">({Math.floor(stay.reviews * 0.3)})</span>
+              <Star className="w-3.5 h-3.5 text-[#afa9ec] stroke-[2]" />
+              <span className="text-[13px] text-[#534ab7]">{stay.rating.toFixed(2)}</span>
+              <span className="text-[13px] text-[#534ab7]">({Math.floor(stay.reviews * 0.3)})</span>
             </div>
-            <p className="text-[13px] text-[#6b7280]">
-              From <span className="font-bold text-[#111827]">${stay.price}</span> / night
+            <p className="text-[13px] text-[#534ab7]">
+              From <span className="font-bold text-[#26215c]">${stay.price}</span> / night
             </p>
           </div>
         </div>

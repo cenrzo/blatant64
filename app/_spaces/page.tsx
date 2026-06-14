@@ -85,16 +85,16 @@ export default function SpacesPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#EEF3F8] flex flex-col">
+    <main className="min-h-screen bg-[#f7f6fd] flex flex-col">
       <Header />
       
       <div className="flex-1 pt-24 pb-20">
         {/* Hero Section */}
         <div className="max-w-7xl mx-auto px-6 md:px-12 pt-12 pb-12">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#111111] tracking-tight max-w-3xl leading-[1.1]">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#26215c] tracking-tight max-w-3xl leading-[1.1]">
             {isGeorgian ? "იპოვეთ იდეალური სივრცე ღონისძიებისთვის" : "Find the perfect event space"}
           </h1>
-          <p className="mt-6 text-lg text-[#6B7A90] max-w-2xl">
+          <p className="mt-6 text-lg text-[#534ab7] max-w-2xl">
             {isGeorgian 
               ? "პროფესიონალური სივრცეები: დარბაზები, ტერასები, რესტორნები და სტუდიები." 
               : "Professional event spaces: halls, rooftops, restaurants, and studios."}
@@ -105,11 +105,11 @@ export default function SpacesPage() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {SPACE_CATEGORIES.map(cat => (
-              <button key={cat.name} className="flex flex-col items-center justify-center gap-3 p-6 md:p-8 rounded-[16px] bg-white border border-[#E7ECF3] hover:border-[#111111] hover:shadow-[0_12px_40px_rgba(107,122,144,0.1)] transition-all duration-300 group outline-none focus-visible:ring-2 focus-visible:ring-[#111111]">
-                <div className="w-14 h-14 rounded-full bg-[#EEF3F8] flex items-center justify-center text-[#111111] group-hover:bg-[#111111] group-hover:text-white transition-colors duration-300">
+              <button key={cat.name} className="flex flex-col items-center justify-center gap-3 p-6 md:p-8 rounded-[16px] bg-white border border-[#cecbf6] hover:border-[#26215c] hover:shadow-[0_12px_40px_rgba(107,122,144,0.1)] transition-all duration-300 group outline-none focus-visible:ring-2 focus-visible:ring-[#26215c]">
+                <div className="w-14 h-14 rounded-full bg-[#f7f6fd] flex items-center justify-center text-[#26215c] group-hover:bg-[#26215c] group-hover:text-white transition-colors duration-300">
                   <cat.icon className="w-6 h-6" />
                 </div>
-                <span className="font-bold text-[#111111] text-[15px]">
+                <span className="font-bold text-[#26215c] text-[15px]">
                   {isGeorgian ? cat.nameKa : cat.name}
                 </span>
               </button>
@@ -118,7 +118,7 @@ export default function SpacesPage() {
         </div>
 
         {/* Filter Bar */}
-        <div className="sticky top-20 z-30 bg-[#EEF3F8]/95 backdrop-blur-md pb-4 mb-10 pt-2 border-y border-[#E7ECF3]">
+        <div className="sticky top-20 z-30 bg-[#f7f6fd]/95 backdrop-blur-md pb-4 mb-10 pt-2 border-y border-[#cecbf6]">
           <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
             <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide py-2">
               {SPACES_FILTERS.map(chip => (
@@ -127,8 +127,8 @@ export default function SpacesPage() {
                   onClick={() => setActiveFilter(activeFilter === chip.label ? null : chip.label)}
                   className={`px-4 py-2 rounded-full border font-medium text-sm transition-colors flex-shrink-0 flex items-center gap-2 ${
                     activeFilter === chip.label
-                      ? "border-[#111111] bg-[#111111] text-white"
-                      : "border-[#E7ECF3] bg-white text-[#6B7A90] hover:border-[#111111]/30"
+                      ? "border-[#26215c] bg-[#26215c] text-white"
+                      : "border-[#cecbf6] bg-white text-[#534ab7] hover:border-[#26215c]/30"
                   }`}
                 >
                   <chip.icon className="w-4 h-4" />
@@ -136,7 +136,7 @@ export default function SpacesPage() {
                 </button>
               ))}
             </div>
-            <button className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-[#E7ECF3] bg-white text-[#111111] font-semibold text-sm hover:border-[#111111] transition-colors ml-4 flex-shrink-0 shadow-sm">
+            <button className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full border border-[#cecbf6] bg-white text-[#26215c] font-semibold text-sm hover:border-[#26215c] transition-colors ml-4 flex-shrink-0 shadow-sm">
               <SlidersHorizontal className="w-4 h-4" />
               {isGeorgian ? "მეტი ფილტრი" : "More Filters"}
             </button>
@@ -149,7 +149,7 @@ export default function SpacesPage() {
           <section className="relative">
             <div className="flex items-end justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-bold text-[#111111]">
+                <h2 className="text-2xl font-bold text-[#26215c]">
                   {isGeorgian ? "რჩეული სივრცეები" : "Featured Spaces"}
                 </h2>
               </div>
@@ -159,10 +159,10 @@ export default function SpacesPage() {
                 <button
                   onClick={() => scroll("left")}
                   disabled={!canScrollLeft}
-                  className={`w-10 h-10 rounded-full border border-[#E7ECF3] bg-white flex items-center justify-center transition-all cursor-pointer ${
+                  className={`w-10 h-10 rounded-full border border-[#cecbf6] bg-white flex items-center justify-center transition-all cursor-pointer ${
                     canScrollLeft
-                      ? "hover:bg-[#F8FAFC] hover:border-[#111111]/30 text-[#111111] shadow-sm"
-                      : "opacity-40 cursor-not-allowed text-[#6B7A90]"
+                      ? "hover:bg-[#f7f6fd] hover:border-[#26215c]/30 text-[#26215c] shadow-sm"
+                      : "opacity-40 cursor-not-allowed text-[#534ab7]"
                   }`}
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -170,10 +170,10 @@ export default function SpacesPage() {
                 <button
                   onClick={() => scroll("right")}
                   disabled={!canScrollRight}
-                  className={`w-10 h-10 rounded-full border border-[#E7ECF3] bg-white flex items-center justify-center transition-all cursor-pointer ${
+                  className={`w-10 h-10 rounded-full border border-[#cecbf6] bg-white flex items-center justify-center transition-all cursor-pointer ${
                     canScrollRight
-                      ? "hover:bg-[#F8FAFC] hover:border-[#111111]/30 text-[#111111] shadow-sm"
-                      : "opacity-40 cursor-not-allowed text-[#6B7A90]"
+                      ? "hover:bg-[#f7f6fd] hover:border-[#26215c]/30 text-[#26215c] shadow-sm"
+                      : "opacity-40 cursor-not-allowed text-[#534ab7]"
                   }`}
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -203,7 +203,7 @@ export default function SpacesPage() {
           {/* Popular Spaces (Grid) */}
           <section>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#111111]">
+              <h2 className="text-2xl font-bold text-[#26215c]">
                 {isGeorgian ? "პოპულარული სივრცეები" : "Popular Spaces"}
               </h2>
             </div>
@@ -220,7 +220,7 @@ export default function SpacesPage() {
           {/* All Spaces */}
           <section>
             <div className="mb-6">
-              <h2 className="text-2xl font-bold text-[#111111]">
+              <h2 className="text-2xl font-bold text-[#26215c]">
                 {isGeorgian ? "ყველა სივრცე" : "All Spaces"}
               </h2>
             </div>
@@ -236,7 +236,7 @@ export default function SpacesPage() {
               ))}
             </div>
             <div className="mt-12 flex justify-center">
-              <button className="px-8 py-3 rounded-xl border border-[#111111] text-[#111111] font-bold hover:bg-[#111111] hover:text-white transition-colors">
+              <button className="px-8 py-3 rounded-xl border border-[#26215c] text-[#26215c] font-bold hover:bg-[#26215c] hover:text-white transition-colors">
                 {isGeorgian ? "მეტის ჩატვირთვა" : "Load more"}
               </button>
             </div>

@@ -55,7 +55,7 @@ export function AuthUserMenu({ variant = "desktop" }: AuthUserMenuProps) {
           <button className="rounded-full focus:outline-none outline-none group transition-all duration-300 hover:scale-110 cursor-pointer hover:cursor-pointer">
             <Avatar className="h-12 w-12 cursor-pointer hover:shadow-lg transition-all duration-300">
               <AvatarImage src={userProfile?.photoURL || undefined} alt={displayName} />
-              <AvatarFallback className="bg-[#556457] text-white font-bold text-base hover:bg-[#556457]/90 transition-colors duration-300">
+              <AvatarFallback className="bg-[#26215c] text-white font-bold text-base hover:bg-[#26215c]/90 transition-colors duration-300">
                 {initials}
               </AvatarFallback>
             </Avatar>
@@ -66,7 +66,7 @@ export function AuthUserMenu({ variant = "desktop" }: AuthUserMenuProps) {
             <div className="flex items-center gap-3">
               <Avatar className="h-9 w-9">
                 <AvatarImage src={userProfile?.photoURL || undefined} alt={displayName} />
-                <AvatarFallback className="bg-[#556457] text-white text-xs font-bold">
+                <AvatarFallback className="bg-[#26215c] text-white text-xs font-bold">
                   {initials}
                 </AvatarFallback>
               </Avatar>

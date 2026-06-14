@@ -58,10 +58,10 @@ export function BrowseVenueCard({ venue, resolveLabel }: BrowseVenueCardProps) {
   }, [venue.image])
 
   return (
-    <Link href={`/venues/${detailPageId}`} className="group block w-full outline-none focus-visible:ring-2 focus-visible:ring-[#111111] rounded-[14px]">
+    <Link href={`/venues/${detailPageId}`} className="group block w-full outline-none focus-visible:ring-2 focus-visible:ring-[#26215c] rounded-[14px]">
       <div className="relative w-full rounded-[14px] overflow-hidden isolate">
         {/* Image Container */}
-        <div className="relative aspect-[4/3] overflow-hidden bg-[#E7ECF3] rounded-[14px]">
+        <div className="relative aspect-[4/3] overflow-hidden bg-[#cecbf6] rounded-[14px]">
           {imageLoading ? (
             <Skeleton className="w-full h-full" />
           ) : (
@@ -81,7 +81,7 @@ export function BrowseVenueCard({ venue, resolveLabel }: BrowseVenueCardProps) {
           {/* Premium Badge */}
           {venue.premium && (
             <div className="absolute top-3 left-3 z-10">
-              <span className="bg-white/90 backdrop-blur-md text-[#111111] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
+              <span className="bg-white/90 backdrop-blur-md text-[#26215c] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm">
                 Premium
               </span>
             </div>
@@ -98,7 +98,7 @@ export function BrowseVenueCard({ venue, resolveLabel }: BrowseVenueCardProps) {
           >
             <Heart
               className={`w-5 h-5 transition-colors ${
-                isFavorited ? "fill-[#111111] text-[#111111]" : "text-white stroke-[1.5]"
+                isFavorited ? "fill-[#26215c] text-[#26215c]" : "text-white stroke-[1.5]"
               }`}
             />
           </button>
@@ -108,19 +108,19 @@ export function BrowseVenueCard({ venue, resolveLabel }: BrowseVenueCardProps) {
         <div className="pt-4 pb-2">
           <div className="flex justify-between items-start gap-4">
             <div className="flex-1 min-w-0">
-              <h3 className="text-[17px] font-bold text-[#111111] mb-0.5 truncate tracking-tight">
+              <h3 className="text-[17px] font-bold text-[#26215c] mb-0.5 truncate tracking-tight">
                 {venueName}
               </h3>
-              <p className="text-[14px] text-[#6B7A90] truncate">
+              <p className="text-[14px] text-[#534ab7] truncate">
                 {venueLocation}
               </p>
-              <p className="text-[14px] text-[#6B7A90] mt-0.5">
+              <p className="text-[14px] text-[#534ab7] mt-0.5">
                 Up to {venue.guests} guests
               </p>
             </div>
             <div className="text-right flex-shrink-0">
-              <div className="text-[16px] font-bold text-[#111111]">${venue.price}</div>
-              <div className="text-[13px] text-[#6B7A90]">night</div>
+              <div className="text-[16px] font-bold text-[#26215c]">${venue.price}</div>
+              <div className="text-[13px] text-[#534ab7]">night</div>
             </div>
           </div>
         </div>

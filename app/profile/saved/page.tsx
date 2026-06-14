@@ -64,24 +64,24 @@ export default function SavedVenuesPage() {
 
   if (authLoading || (loading && user)) {
     return (
-      <div className="min-h-screen bg-[#F5F7FB] flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-[#111111]" />
+      <div className="min-h-screen bg-[#f7f6fd] flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-[#26215c]" />
       </div>
     )
   }
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#F5F7FB] pt-32 px-6 flex flex-col items-center justify-center text-center">
+      <div className="min-h-screen bg-[#f7f6fd] pt-32 px-6 flex flex-col items-center justify-center text-center">
         <Header />
-        <Heart className="w-16 h-16 text-[#6B7A90]/30 mb-6" />
-        <h1 className="text-3xl font-extrabold text-[#111111] mb-4">Please sign in</h1>
-        <p className="text-[#6B7A90] mb-8 max-w-md">
+        <Heart className="w-16 h-16 text-[#534ab7]/30 mb-6" />
+        <h1 className="text-3xl font-extrabold text-[#26215c] mb-4">Please sign in</h1>
+        <p className="text-[#534ab7] mb-8 max-w-md">
           You need to be signed in to view your saved venues.
         </p>
         <Link 
           href="/sign-in" 
-          className="px-8 py-3 bg-[#111111] text-white rounded-full font-bold hover:bg-black transition-all"
+          className="px-8 py-3 bg-[#26215c] text-white rounded-full font-bold hover:bg-black transition-all"
         >
           Sign In
         </Link>
@@ -90,7 +90,7 @@ export default function SavedVenuesPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F5F7FB] font-sans">
+    <main className="min-h-screen bg-[#f7f6fd] font-sans">
       <Header />
       
       <div className="pt-[104px] px-6 md:px-12 max-w-[1400px] mx-auto pb-20">
@@ -102,13 +102,13 @@ export default function SavedVenuesPage() {
 
           <div className="lg:col-span-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <h1 className="text-3xl font-extrabold text-[#111111]">Saved Venues</h1>
+              <h1 className="text-3xl font-extrabold text-[#26215c]">Saved Venues</h1>
               <div className="flex items-center gap-4">
-                <div className="flex p-1 rounded-[12px] bg-white border border-[#E7ECF3] shadow-sm w-fit">
-                  <button className="p-2 rounded-[8px] bg-[#F5F7FB] text-[#111111]">
+                <div className="flex p-1 rounded-[12px] bg-white border border-[#cecbf6] shadow-sm w-fit">
+                  <button className="p-2 rounded-[8px] bg-[#f7f6fd] text-[#26215c]">
                     <Grid2X2 className="w-4 h-4" />
                   </button>
-                  <button className="p-2 rounded-[8px] text-[#6B7A90] hover:text-[#111111] transition-colors">
+                  <button className="p-2 rounded-[8px] text-[#534ab7] hover:text-[#26215c] transition-colors">
                     <List className="w-4 h-4" />
                   </button>
                 </div>
@@ -117,15 +117,15 @@ export default function SavedVenuesPage() {
 
         {/* Venue Grid */}
         {savedVenues.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-[24px] border border-[#E7ECF3] shadow-[0_4px_24px_rgba(107,122,144,0.04)]">
-            <Heart className="w-12 h-12 text-[#E7ECF3] mx-auto mb-4" />
-            <h2 className="text-[18px] font-bold text-[#111111] mb-2">No saved venues yet</h2>
-            <p className="text-[#6B7A90] text-[14px] mb-8 max-w-sm mx-auto">
+          <div className="text-center py-20 bg-white rounded-[24px] border border-[#cecbf6] shadow-[0_4px_24px_rgba(107,122,144,0.04)]">
+            <Heart className="w-12 h-12 text-[#cecbf6] mx-auto mb-4" />
+            <h2 className="text-[18px] font-bold text-[#26215c] mb-2">No saved venues yet</h2>
+            <p className="text-[#534ab7] text-[14px] mb-8 max-w-sm mx-auto">
               Explore our amazing spaces and click the heart icon to save them for later.
             </p>
             <Link 
               href="/browse" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#111111] text-white rounded-[12px] text-[14px] font-bold hover:bg-black transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#26215c] text-white rounded-[12px] text-[14px] font-bold hover:bg-black transition-all"
             >
               Browse Spaces
             </Link>
@@ -160,16 +160,16 @@ export default function SavedVenuesPage() {
         {/* Footer CTA */}
         {savedVenues.length > 0 && (
           <div className="py-20 flex flex-col items-center text-center">
-            <Heart className="w-6 h-6 text-[#E7ECF3] mb-4" />
-            <h3 className="text-[14px] font-bold text-[#111111]">
+            <Heart className="w-6 h-6 text-[#cecbf6] mb-4" />
+            <h3 className="text-[14px] font-bold text-[#26215c]">
               Can't find a venue you saved?
             </h3>
-            <p className="text-[13px] text-[#6B7A90] mt-1 mb-6">
+            <p className="text-[13px] text-[#534ab7] mt-1 mb-6">
               Explore more amazing spaces for your next event.
             </p>
             <Link 
               href="/browse" 
-              className="px-6 py-3 rounded-[14px] bg-[#111111] text-white text-[13px] font-bold hover:bg-black transition-colors shadow-[0_4px_14px_rgba(17,17,17,0.15)]"
+              className="px-6 py-3 rounded-[14px] bg-[#26215c] text-white text-[13px] font-bold hover:bg-black transition-colors shadow-[0_4px_14px_rgba(17,17,17,0.15)]"
             >
               Browse venues
             </Link>
