@@ -2,43 +2,43 @@
 @import "tw-animate-css";
 
 :root {
-  --background: #F5F7FB;
-  --foreground: #111111;
+  --background: #F7F6FD;
+  --foreground: #26215C;
   --card: #FFFFFF;
-  --card-foreground: #111111;
+  --card-foreground: #26215C;
   --popover: #FFFFFF;
-  --popover-foreground: #111111;
-  --primary: #111111;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F8FAFC;
-  --secondary-foreground: #111111;
-  --muted: #F8FAFC;
-  --muted-foreground: #6B7A90;
-  --accent: #6B7A90;
+  --popover-foreground: #26215C;
+  --primary: #26215C;
+  --primary-foreground: #EEEDFE;
+  --secondary: #EEEDFE;
+  --secondary-foreground: #3C3489;
+  --muted: #EEEDFE;
+  --muted-foreground: #AFA9EC;
+  --accent: #7F77DD;
   --accent-foreground: #FFFFFF;
   --destructive: #ff3b30;
   --destructive-foreground: #ffffff;
-  --border: #E7ECF3;
-  --input: #E7ECF3;
-  --ring: #6B7A90;
+  --border: #CECBF6;
+  --input: #CECBF6;
+  --ring: #7F77DD;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 1rem;
-  --sidebar: #f5f5f7;
-  --sidebar-foreground: #1d1d1f;
-  --sidebar-primary: #1d1d1f;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f5f5f7;
-  --sidebar-accent-foreground: #1d1d1f;
-  --sidebar-border: #d2d2d7;
-  --sidebar-ring: #4a5f7f;
+  --sidebar: #F7F6FD;
+  --sidebar-foreground: #26215C;
+  --sidebar-primary: #26215C;
+  --sidebar-primary-foreground: #EEEDFE;
+  --sidebar-accent: #EEEDFE;
+  --sidebar-accent-foreground: #3C3489;
+  --sidebar-border: #CECBF6;
+  --sidebar-ring: #7F77DD;
   --apple-green: #34c759;
-  --apple-yellow: #ffd60a;
+  --apple-yellow: #EF9F27;
   --apple-red: #ff3b30;
-  --apple-blue: #4a5f7f;
+  --apple-blue: #7F77DD;
   --glass-bg: rgba(255, 255, 255, 0.72);
   --glass-border: rgba(255, 255, 255, 0.25);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
@@ -89,6 +89,69 @@
   --color-apple-yellow: var(--apple-yellow);
   --color-apple-red: var(--apple-red);
   --color-apple-blue: var(--apple-blue);
+
+  /* Remap neutral ramps (gray/slate/zinc/neutral/stone) to the lavender palette.
+     This retints all hardcoded neutral utilities to the color system without
+     altering any layout, spacing, or structure. */
+  --color-gray-50: #F7F6FD;
+  --color-gray-100: #EEEDFE;
+  --color-gray-200: #CECBF6;
+  --color-gray-300: #CECBF6;
+  --color-gray-400: #AFA9EC;
+  --color-gray-500: #AFA9EC;
+  --color-gray-600: #534AB7;
+  --color-gray-700: #534AB7;
+  --color-gray-800: #3C3489;
+  --color-gray-900: #26215C;
+  --color-gray-950: #26215C;
+
+  --color-slate-50: #F7F6FD;
+  --color-slate-100: #EEEDFE;
+  --color-slate-200: #CECBF6;
+  --color-slate-300: #CECBF6;
+  --color-slate-400: #AFA9EC;
+  --color-slate-500: #AFA9EC;
+  --color-slate-600: #534AB7;
+  --color-slate-700: #534AB7;
+  --color-slate-800: #3C3489;
+  --color-slate-900: #26215C;
+  --color-slate-950: #26215C;
+
+  --color-zinc-50: #F7F6FD;
+  --color-zinc-100: #EEEDFE;
+  --color-zinc-200: #CECBF6;
+  --color-zinc-300: #CECBF6;
+  --color-zinc-400: #AFA9EC;
+  --color-zinc-500: #AFA9EC;
+  --color-zinc-600: #534AB7;
+  --color-zinc-700: #534AB7;
+  --color-zinc-800: #3C3489;
+  --color-zinc-900: #26215C;
+  --color-zinc-950: #26215C;
+
+  --color-neutral-50: #F7F6FD;
+  --color-neutral-100: #EEEDFE;
+  --color-neutral-200: #CECBF6;
+  --color-neutral-300: #CECBF6;
+  --color-neutral-400: #AFA9EC;
+  --color-neutral-500: #AFA9EC;
+  --color-neutral-600: #534AB7;
+  --color-neutral-700: #534AB7;
+  --color-neutral-800: #3C3489;
+  --color-neutral-900: #26215C;
+  --color-neutral-950: #26215C;
+
+  --color-stone-50: #F7F6FD;
+  --color-stone-100: #EEEDFE;
+  --color-stone-200: #CECBF6;
+  --color-stone-300: #CECBF6;
+  --color-stone-400: #AFA9EC;
+  --color-stone-500: #AFA9EC;
+  --color-stone-600: #534AB7;
+  --color-stone-700: #534AB7;
+  --color-stone-800: #3C3489;
+  --color-stone-900: #26215C;
+  --color-stone-950: #26215C;
 }
 
 @layer base {
@@ -223,7 +286,7 @@
 }
 
 .section-gradient-blue {
-  background: linear-gradient(180deg, rgba(74, 95, 127, 0.02) 0%, rgba(74, 95, 127, 0.01) 50%, transparent 100%);
+  background: linear-gradient(180deg, rgba(127, 119, 221, 0.02) 0%, rgba(127, 119, 221, 0.01) 50%, transparent 100%);
 }
 
 .section-gradient-warm {
@@ -275,17 +338,17 @@
   background:
     /* Top: match hero gradient base */
     linear-gradient(180deg,
-      #F5F7FB 0%,
-      #f4f6fa 8%,
-      #f1f4f9 18%,
-      #eef2f8 30%,
-      #f0f3f8 42%,
-      #f3f6fb 55%,
-      #f5f7fb 65%,
-      #f2f5fa 78%,
-      #eef3f9 88%,
-      #f0f4f9 95%,
-      #f3f6fa 100%
+      #F7F6FD 0%,
+      #f6f5fc 8%,
+      #f3f2fb 18%,
+      #efedf9 30%,
+      #f1effa 42%,
+      #f5f4fc 55%,
+      #f7f6fd 65%,
+      #f3f2fb 78%,
+      #efedf9 88%,
+      #f1effa 95%,
+      #f5f4fc 100%
     );
   background-attachment: fixed;
 }
@@ -427,11 +490,11 @@
 }
 
 .offline-map-surface {
-  background: linear-gradient(135deg, rgba(74, 95, 127, 0.14) 0%, rgba(255, 255, 255, 0.7) 48%, rgba(52, 199, 89, 0.14) 100%);
+  background: linear-gradient(135deg, rgba(127, 119, 221, 0.14) 0%, rgba(255, 255, 255, 0.7) 48%, rgba(52, 199, 89, 0.14) 100%);
 }
 
 .offline-map-grid {
-  background: radial-gradient(circle at center, rgba(74, 95, 127, 0.03) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(127, 119, 221, 0.03) 0%, transparent 70%);
 }
 
 @keyframes fade-up {
@@ -730,15 +793,15 @@
 @keyframes icon-glow-in {
   0% {
     transform: scale(0.9);
-    box-shadow: 0 0 0 rgba(74, 95, 127, 0);
+    box-shadow: 0 0 0 rgba(127, 119, 221, 0);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 8px 40px rgba(74, 95, 127, 0.4);
+    box-shadow: 0 8px 40px rgba(127, 119, 221, 0.4);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 8px 30px rgba(74, 95, 127, 0.35);
+    box-shadow: 0 8px 30px rgba(127, 119, 221, 0.35);
   }
 }
 
@@ -802,7 +865,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: rgba(74, 95, 127, 0.35);
+  background: rgba(127, 119, 221, 0.35);
   border-radius: 2px;
   transform: scaleX(0);
   transform-origin: center;
