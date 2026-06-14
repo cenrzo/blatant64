@@ -2,7 +2,7 @@
 /*  BASE & LAYOUT                                              */
 /* ═══════════════════════════════════════════════════════════ */
 .houses-page-wrapper {
-  background-color: #EEF3F8;
+  background-color: #F7F6FD;
   min-height: 100vh;
 }
 
@@ -97,7 +97,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 24px;
-  color: #111;
+  color: #26215c;
 }
 
 .houses-sidebar__section {
@@ -114,7 +114,7 @@
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 16px;
-  color: #111;
+  color: #26215c;
 }
 
 .houses-sidebar__item {
@@ -134,7 +134,7 @@
   width: 22px;
   height: 22px;
   border-radius: 6px;
-  border: 1.5px solid #ccc;
+  border: 1.5px solid #cecbf6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,18 +142,18 @@
 }
 
 .houses-sidebar__item--active .houses-sidebar__checkbox {
-  background-color: #6B7D6D;
-  border-color: #6B7D6D;
+  background-color: #7F77DD;
+  border-color: #7F77DD;
 }
 
 .houses-sidebar__item-label {
   font-size: 0.95rem;
-  color: #444;
+  color: #534ab7;
 }
 
 .houses-sidebar__item--active .houses-sidebar__item-label {
   font-weight: 600;
-  color: #6B7D6D;
+  color: #7F77DD;
 }
 
 .houses-sidebar__rating {
@@ -188,15 +188,15 @@
 .houses-content__count {
   font-size: 1rem;
   font-weight: 600;
-  color: #111;
+  color: #26215c;
 }
 
 .houses-content__sort {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #6B7D6D;
-  border: 1px solid #6B7D6D;
+  background: #7F77DD;
+  border: 1px solid #7F77DD;
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 0.95rem;
@@ -207,8 +207,8 @@
 }
 
 .houses-content__sort:hover {
-  background-color: #556457;
-  border-color: #556457;
+  background-color: #534AB7;
+  border-color: #534AB7;
 }
 
 .houses-content__sort svg {
@@ -285,7 +285,7 @@
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #111111;
+  background: #26215c;
   padding: 4px 10px;
   border-radius: 20px;
   font-size: 0.75rem;
@@ -326,7 +326,7 @@
 .houses-card__title {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #111;
+  color: #26215c;
   margin-bottom: 4px;
   white-space: nowrap;
   overflow: hidden;
@@ -337,7 +337,7 @@
 
 .houses-card__location {
   font-size: 0.9rem;
-  color: #666;
+  color: #534ab7;
   margin-bottom: 8px;
 }
 
@@ -357,16 +357,16 @@
 .houses-card__rating-value {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #111;
+  color: #26215c;
 }
 
 .houses-card__price {
   font-size: 0.95rem;
-  color: #444;
+  color: #534ab7;
 }
 
 .houses-card__price strong {
-  color: #111;
+  color: #26215c;
 }
 
 /* ═══════════════════════════════════════════════════════════ */
@@ -392,7 +392,7 @@
   background: #FFFFFF;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #444;
+  color: #534ab7;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -407,8 +407,8 @@
 }
 
 .houses-pagination__btn--active {
-  background: #6B7D6D !important;
-  border-color: #6B7D6D !important;
+  background: #7F77DD !important;
+  border-color: #7F77DD !important;
   color: #fff !important;
 }
 
@@ -418,7 +418,7 @@
 }
 
 .houses-pagination__dots {
-  color: #888;
+  color: #afa9ec;
   font-weight: 500;
 }
 
@@ -434,7 +434,7 @@
   width: 100%;
   aspect-ratio: 4/3;
   border-radius: 14px;
-  background: #E5E7EB;
+  background: #CECBF6;
   margin-bottom: 12px;
   animation: pulse 1.5s infinite;
 }
@@ -448,7 +448,7 @@
 .houses-skeleton-line {
   height: 16px;
   border-radius: 4px;
-  background: #E5E7EB;
+  background: #CECBF6;
   animation: pulse 1.5s infinite;
 }
 
@@ -487,7 +487,7 @@
 .houses-list-space-card {
   display: flex;
   background: white;
-  border: 1px solid #E5E7EB;
+  border: 1px solid #CECBF6;
   border-radius: 16px;
   overflow: hidden;
   min-height: 320px;
