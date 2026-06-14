@@ -97,21 +97,12 @@ function BookingCard({ booking, showActions, isSent, processingId, onAction, onC
 
   return (
     <div 
-      className={`group relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-white via-white to-secondary/40 dark:from-slate-900 dark:to-slate-900/60 backdrop-blur-xl border transition-all duration-300 hover:-translate-y-1 ${
-        booking.status === 'pending' ? 'border-accent/40 shadow-[0_12px_40px_rgba(127,119,221,0.16)] hover:shadow-[0_18px_50px_rgba(127,119,221,0.22)]' :
-        booking.status === 'cancelled' ? 'border-border/40 shadow-sm opacity-70 hover:opacity-100' :
-        'border-border/60 shadow-[0_4px_24px_rgba(38,33,92,0.06)] hover:shadow-[0_16px_44px_rgba(38,33,92,0.14)]'
+      className={`p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border shadow-sm ${
+        booking.status === 'pending' ? 'border-accent/30' :
+        booking.status === 'cancelled' ? 'border-border/40 opacity-70' :
+        'border-border/60'
       }`}
     >
-      <span
-        aria-hidden
-        className={`absolute inset-x-0 top-0 h-1 ${
-          booking.status === 'accepted' ? 'bg-green-500' :
-          booking.status === 'denied' || booking.status === 'timeout' ? 'bg-red-500' :
-          booking.status === 'cancelled' ? 'bg-muted-foreground/40' :
-          'bg-amber-400'
-        }`}
-      />
       <ReviewModal 
         booking={reviewingBooking}
         isOpen={!!reviewingBooking}
@@ -120,12 +111,12 @@ function BookingCard({ booking, showActions, isSent, processingId, onAction, onC
       />
       <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
         {/* Venue Image */}
-        <div className="relative w-full sm:w-[240px] h-[180px] sm:h-[160px] rounded-2xl overflow-hidden flex-shrink-0 bg-secondary shadow-md ring-1 ring-border/40">
+        <div className="relative w-full sm:w-[240px] h-[180px] sm:h-[160px] rounded-2xl overflow-hidden flex-shrink-0 bg-secondary">
           <Image 
             src={booking.venueImage || "/images/venues/default.jpg"}
             alt={booking.venueName}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           <div className="absolute bottom-3 left-3 right-3">
@@ -547,9 +538,9 @@ export default function RequestsDashboard() {
         )}
 
         {currentBookings.length === 0 ? (
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-white via-white to-secondary/40 dark:from-slate-900 dark:to-slate-900/60 backdrop-blur-xl border border-border/60 flex flex-col items-center justify-center text-center shadow-[0_8px_30px_rgba(38,33,92,0.08)]">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-accent/10 ring-1 ring-border/50 flex items-center justify-center mb-6">
-              <Inbox className="w-10 h-10 text-accent" />
+          <div className="p-12 rounded-2xl bg-white dark:bg-slate-900 border border-border/60 flex flex-col items-center justify-center text-center shadow-sm">
+            <div className="w-24 h-24 rounded-full bg-secondary flex items-center justify-center mb-6">
+              <Inbox className="w-10 h-10 text-muted-foreground" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-2">
               {activeTab === "incoming" ? "No Venue Requests" : "No Bookings Yet"}

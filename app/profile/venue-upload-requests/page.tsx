@@ -138,9 +138,9 @@ export default function VenueUploadRequestsPage() {
         </div>
 
         {venues.length === 0 ? (
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-white via-white to-secondary/40 dark:from-slate-900 dark:to-slate-900/60 backdrop-blur-xl border border-border/60 flex flex-col items-center justify-center text-center shadow-[0_8px_30px_rgba(38,33,92,0.08)]">
-            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-accent/10 ring-1 ring-border/50 flex items-center justify-center mb-6">
-              <Building2 className="w-10 h-10 text-accent" />
+          <div className="p-12 rounded-2xl bg-white dark:bg-slate-900 border border-border/60 flex flex-col items-center justify-center text-center shadow-sm">
+            <div className="w-24 h-24 rounded-full bg-secondary flex items-center justify-center mb-6">
+              <Building2 className="w-10 h-10 text-muted-foreground" />
             </div>
             <h3 className="text-xl font-bold text-foreground mb-2 uppercase">No Requests Yet</h3>
             <p className="text-muted-foreground max-w-sm mb-8 font-medium">
@@ -164,27 +164,13 @@ export default function VenueUploadRequestsPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  className="group relative overflow-hidden p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-white via-white to-secondary/40 dark:from-slate-900 dark:to-slate-900/60 backdrop-blur-xl border border-border/60 shadow-[0_4px_24px_rgba(38,33,92,0.06)] transition-all duration-300 hover:shadow-[0_16px_44px_rgba(38,33,92,0.16)] hover:border-accent/40 hover:-translate-y-1"
+                  className="p-6 sm:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-border/60 shadow-sm"
                 >
-                  <span
-                    aria-hidden
-                    className={`absolute inset-x-0 top-0 h-1 ${
-                      venue.status === "approved"
-                        ? "bg-green-500"
-                        : venue.status === "rejected"
-                          ? "bg-red-500"
-                          : "bg-amber-400"
-                    }`}
-                  />
-                  <span
-                    aria-hidden
-                    className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-accent/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  />
                   <div className="flex flex-col md:flex-row gap-6 sm:gap-8">
                     {/* Venue image */}
-                    <div className="relative w-full md:w-[240px] h-[180px] sm:h-[160px] rounded-2xl overflow-hidden flex-shrink-0 bg-secondary shadow-md ring-1 ring-border/40">
+                    <div className="relative w-full md:w-[240px] h-[180px] sm:h-[160px] rounded-2xl overflow-hidden flex-shrink-0 bg-secondary">
                       {venue.images?.[0] ? (
-                        <Image src={venue.images[0]} alt={venue.spaceName} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                        <Image src={venue.images[0]} alt={venue.spaceName} fill className="object-cover" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-muted-foreground/20">
                           <Building2 className="w-12 h-12" />
